@@ -1,0 +1,35 @@
+/* ./styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap");
+
+@layer components {
+  .link {
+    @apply cursor-pointer  hover:text-blue-light active:text-blue-light;
+  }
+  .button {
+    @apply cursor-pointer rounded text-center p-2 text-sm  text-white md:text-sm bg-gradient-to-b from-blue-light to-blue-dark border border-blue-light  focus:outline-none focus:ring-2 focus:ring-blue-dark active:from-blue-dark;
+  }
+}
+
+html,
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #1F2937;
+}
+
+.heightFix {
+  min-height: calc(100vh - 150px);
+  height: 100%;
+}
+
+.product_image img{
+  object-fit: contain;
+  cursor: pointer;
+  width: 100%;
+  max-width: 500px;
+}
