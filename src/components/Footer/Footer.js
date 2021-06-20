@@ -57,7 +57,12 @@ function Footer() {
                         </Link>
                     </div>
                 </div>
-                <p className="mt-6 text-gray-200 text-center">Made with  💗  🔥  by <span className="text-white hover:underline"><Link href="https://itspiyushsati.netlify.app">Piyush Sati</Link></span></p>
+                <p className="mt-6 text-gray-200 text-center">
+                    Made with &nbsp;💗 🔥&nbsp; by
+                    <span className="text-white hover:underline ml-2">
+                        <Link href="https://itspiyushsati.netlify.app">Piyush Sati</Link>
+                    </span>
+                </p>
             </div>
         </div>
     );

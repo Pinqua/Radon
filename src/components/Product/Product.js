@@ -6,13 +6,13 @@ import Fade from "react-reveal/Fade";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-function Product({ id, title, price, description, category, image }) {
+function Product({ _id, title, price, description, category, image }) {
   const dispatch = useDispatch();
   const router = useRouter();
   const addItemToCart = () => {
     //Sending the product as an action to the REDUX store... the cart slice
     dispatch(
-      addToCart({ id, title, price, description, category, image, qty: 1 })
+      addToCart({ _id, title, price, description, category, image, qty: 1 })
     );
   };
 
@@ -28,13 +28,13 @@ function Product({ id, title, price, description, category, image }) {
           width={200}
           objectFit="contain"
           className="cursor-pointer"
-          onClick={() => router.push(`/product-details/${id}`)}
+          onClick={() => router.push(`/product-details/${_id}`)}
         />
         <h4 className="my-3 link font-medium">
-          <Link href={`/product-details/${id}`}>{title}</Link>
+          <Link href={`/product-details/${_id}`}>{title}</Link>
         </h4>
         <p className="text-xs  mb-2 line-clamp-2 text-gray-500 link">
-          <Link href={`/product-details/${id}`}>{description}</Link>
+          <Link href={`/product-details/${_id}`}>{description}</Link>
         </p>
         <div className="mb-5 mt-2 font-bold text-gray-700">
           <Currency quantity={price} currency="INR" />

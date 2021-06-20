@@ -11,12 +11,12 @@ export default async (req, res) => {
         .find({ user: session.user.email, payment_status: "paid" })
         .toArray();
       orders = JSON.parse(JSON.stringify(orders));
-      res.send(200).json(orders);
+      return res.status(200).json(orders);
     } else {
-      res.send(400);
+      return res.status(401).json({ message: "Unauthorized" });
     }
   } catch (err) {
-    console.log(err);
-    res.status(500);
+    console.error(err);
+    return res.status(500).json({ message: "Internal Server Error" });
   }
 };

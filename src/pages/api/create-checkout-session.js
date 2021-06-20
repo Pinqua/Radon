@@ -7,15 +7,14 @@ export default async (req, res) => {
 
   try {
     const { db } = await connectToDatabase();
-    await db.collection("temp").deleteMany({ user: email });
+    //await db.collection("temp").deleteMany({ user: email });
     //to delete temp doc in 56 days automatically. run only one time
     //await db.collection("temp").createIndex({ "createdAt": 1 }, { expireAfterSeconds:4838400 })
     const result = await db.collection("temp").insertOne({
       user: email,
       items,
-      createdAt: new Date()
+      createdAt: new Date(),
     });
-    console.log("ID", result.insertedId)
     const transformedItems = items.map((item) => ({
       description: item.description,
       quantity: item.qty,
@@ -24,7 +23,9 @@ export default async (req, res) => {
         unit_amount: item.price * 100,
         product_data: {
           name: item.title,
-          images: [item.image],
+          images: [
+            /*item.image*/
+          ],
         },
       },
     }));
@@ -40,18 +41,16 @@ export default async (req, res) => {
         success_url: `${process.env.HOST}/success`,
         cancel_url: `${process.env.HOST}/cart`,
         metadata: {
-          user: email,
+          id: JSON.stringify(result.insertedId),
         },
       });
-
-      res.status(200).json({ id: session.id });
+      return res.status(200).json({ id: session.id });
     } catch (err) {
-      // await db.collection("orders").deleteOne({ _id: result.insertedId });
-      console.log(err);
-      res.status(500).json({ error: err });
+      console.error(err);
+      return res.status(400).json({ message: "Bad Request" });
     }
   } catch (err) {
-    console.log(err);
-    res.status(500).json({ error: err });
+    console.error(err);
+    return res.status(400).json({ message: "Bad Request" });
   }
 };

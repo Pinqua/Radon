@@ -70,17 +70,20 @@ function Header({ products }) {
               className="absolute w-full h-auto max-h-96 top-10 rounded-b bg-gray-100 overflow-y-auto shadow-lg"
             >
               {searchResults?.length ? (
-                searchResults.map(({ item: { id, title, image } }, i) => (
-                  <Link href={`/product-details/${id}`} key={i}>
-                    <div className="flex cursor-pointer items-center justify-between p-3 border-b-2  border-gray-200 bg-gray-100 hover:bg-gray-200">
-                      <h5 className="font-medium text-sm text-gray-700">
+                searchResults.map(({ item: { _id, title, image } }, i) => (
+                  <Link
+                    href={`/product-details/${_id}`}
+                    key={`search-result${i}${_id}`}
+                  >
+                    <div className="flex cursor-pointer items-center justify-between px-4 py-2 border-b-2  border-gray-200 bg-gray-100 hover:bg-gray-200">
+                      <h5 className="font-medium text-sm text-gray-700 pr-4">
                         {title}
                       </h5>
                       <Image
                         src={image}
-                        height={35}
-                        width={35}
-                        objectFit="contain pl-4"
+                        height={40}
+                        width={40}
+                        objectFit="contain"
                       />
                     </div>
                   </Link>
@@ -109,7 +112,7 @@ function Header({ products }) {
             >
               <span className="flex items-center cursor-pointer">
                 <img
-                  src={session?.user?.image || "/img/pic.jpg"}
+                  src={session?.user?.image || "/img/profile_pic.svg"}
                   loading="lazy"
                   alt="pic"
                   width="30"
@@ -132,10 +135,11 @@ function Header({ products }) {
                   >
                     Orders
                   </div>
-                  <div className="w-full cursor-pointer hover:bg-gray-100 p-2 border-b border-gray-200"
-                  onClick={() => router.push("/about")}
+                  <div
+                    className="w-full cursor-pointer hover:bg-gray-100 p-2 border-b border-gray-200"
+                    onClick={() => router.push("/about")}
                   >
-                    About
+                    Contact
                   </div>
                   <div
                     className="w-full cursor-pointer hover:bg-gray-100 p-2"
@@ -149,6 +153,9 @@ function Header({ products }) {
           )}
           <span className="link" onClick={() => router.push("/orders")}>
             Orders
+          </span>
+          <span className="link" onClick={() => router.push("/about")}>
+            About
           </span>
         </div>
         <div

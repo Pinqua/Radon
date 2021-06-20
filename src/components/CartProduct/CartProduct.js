@@ -8,7 +8,7 @@ import { updateQty, removeFromCart } from "../../slices/cartSlice";
 import Fade from "react-reveal/Fade";
 
 function CartProduct({
-  id,
+  _id,
   title,
   price,
   description,
@@ -21,11 +21,11 @@ function CartProduct({
   const router = useRouter();
   const total = price * qty;
 
-  const removeItemFromCart = () => dispatch(removeFromCart({ id }));
+  const removeItemFromCart = () => dispatch(removeFromCart({ _id }));
   const incQty = () =>
     dispatch(
       updateQty({
-        id,
+        _id,
         title,
         price,
         description,
@@ -37,7 +37,7 @@ function CartProduct({
   const decQty = () =>
     dispatch(
       updateQty({
-        id,
+        _id,
         title,
         price,
         description,
@@ -50,9 +50,8 @@ function CartProduct({
   return (
     <Fade bottom>
       <div
-        className={`block bg-white py-6 sm:grid sm:grid-cols-5 sm:my-3 ${
-          border ? "border-b border-gray-200" : ""
-        }`}
+        className={`block bg-white py-6 sm:grid sm:grid-cols-5 sm:my-3 ${border ? "border-b border-gray-200" : ""
+          }`}
       >
         <div className="text-center sm:text-left">
           <Image
@@ -61,17 +60,17 @@ function CartProduct({
             height={150}
             objectFit="contain"
             className="cursor-pointer"
-            onClick={() => router.push(`/product-details/${id}`)}
+            onClick={() => router.push(`/product-details/${_id}`)}
           />
         </div>
 
         {/* Middle */}
         <div className="col-span-3 mx-5 mb-4 sm:mb-0">
           <h4 className="my-3 link text-xl font-medium">
-            <Link href={`/product-details/${id}`}>{title}</Link>
+            <Link href={`/product-details/${_id}`}>{title}</Link>
           </h4>
           <p className="text-sm my-2 mb-4 line-clamp-3 link text-gray-500">
-            <Link href={`/product-details/${id}`}>{description}</Link>
+            <Link href={`/product-details/${_id}`}>{description}</Link>
           </p>
           <span className="font-medium">
             {qty} × <Currency quantity={price} currency="INR" /> =
@@ -94,7 +93,7 @@ function CartProduct({
               <PlusIcon className="h-5" />
             </button>
           </div>
-          <button className="button py-2 px-8" onClick={removeItemFromCart}>
+          <button className="button py-2 px-10" onClick={removeItemFromCart}>
             Remove
           </button>
         </div>

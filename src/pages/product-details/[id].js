@@ -1,17 +1,18 @@
-import axios from "axios";
+import { ObjectId } from "bson";
 import Head from "next/head";
-import Header from "../../components/Header/Header";
 import ProductDetails from "../../components/Product/ProductDetails";
+import { connectToDatabase } from "../../util/mongodb";
 
-function productDetails({ product, products }) {
+function productDetails({ product }) {
   return (
     <>
-      <Head>
-        <title>Radon | {product?.title}</title>
-      </Head>
-      <Header products={products} />
+      {product?.title && (
+        <Head>
+          <title>Radon | {product.title}</title>
+        </Head>
+      )}
       <ProductDetails
-        id={product?.id}
+        _id={product?._id}
         title={product?.title}
         price={product?.price}
         description={product?.description}
@@ -25,42 +26,40 @@ function productDetails({ product, products }) {
 export default productDetails;
 
 export const getStaticPaths = async () => {
-  try {
-    const res = await axios.get("https://fakestoreapi.com/products");
-    const products = res.data;
-    const paths = products.map((product) => ({
-      params: { id: product.id.toString() },
-    }));
-    return {
-      paths,
-      fallback: true,
-    };
-  } catch (err) {
-    console.log(err);
-    return {
-      paths: [],
-      fallback: false,
-    };
-  }
+  const { db } = await connectToDatabase();
+  const products = await db.collection("products").find({}).toArray();
+  const paths = products.map((product) => ({
+    params: { id: product._id.toString() },
+  }));
+  return {
+    paths,
+    fallback: true,
+  };
 };
 
 export const getStaticProps = async (context) => {
+  let product;
   try {
-    const res = await axios.get(
-      `https://fakestoreapi.com/products/${context.params.id}`
-    );
-    const response = await axios.get("https://fakestoreapi.com/products");
-    return {
-      props: {
-        product: res.data,
-        products: response.data,
-      },
-      revalidate: 10,
-    };
+    const { db } = await connectToDatabase();
+    product = await db
+      .collection("products")
+      .findOne({ _id: ObjectId(context.params.id) });
   } catch (err) {
-    console.log(err);
+    console.error(err);
     return {
-      props: {},
+      notFound: true,
     };
   }
+  if (!product) {
+    return {
+      notFound: true,
+    };
+  }
+  product = JSON.parse(JSON.stringify(product));
+  return {
+    props: {
+      product,
+    },
+    revalidate: 10,
+  };
 };
