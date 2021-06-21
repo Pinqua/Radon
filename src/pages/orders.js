@@ -3,10 +3,13 @@ import Order from "../components/Order/Order";
 import useSWR from "swr";
 import Skeleton from "react-loading-skeleton";
 import Image from "next/image";
+import Head from "next/head";
 
 function Orders() {
-  const [session] = useSession();
-  const { data: orders, error } = useSWR(session ? "/api/orders" : null);
+  const [session, loading] = useSession();
+  const { data: orders, error } = useSWR(
+    !loading && session ? "/api/orders" : null
+  );
 
   if (error) {
     orders = [];
@@ -16,7 +19,10 @@ function Orders() {
 
   return (
     <>
-      <main className="max-w-screen-xl mx-auto pt-20 pb-10 heightFix">
+      <Head>
+        <title>Radon | Orders</title>
+      </Head>
+      <main className="max-w-screen-xl mx-auto pt-20 pb-20 heightFix">
         <h1 className="text-2xl font-semibold border-b-2 mb-2 pb-4 border-gray-200 text-gray-700 h-full">
           Your Orders
         </h1>

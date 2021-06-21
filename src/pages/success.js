@@ -1,11 +1,22 @@
 import { CheckCircleIcon } from "@heroicons/react/solid";
+import { useSession } from "next-auth/client";
 import { useRouter } from "next/router";
+import Custom404 from "./404";
+import Head from "next/head";
 
 function success() {
   const router = useRouter();
+  const [session, loading] = useSession();
+
+  if (!loading && !session) {
+    return <Custom404 />;
+  }
 
   return (
     <>
+      <Head>
+        <title>Radon | Order Placed Successfully</title>
+      </Head>
       <div className="bg-gray-100 heightFix flex items-center">
         <main className="max-w-screen-lg mx-auto">
           <div className="flex flex-col p-10 bg-white shadow-md rounded-md">

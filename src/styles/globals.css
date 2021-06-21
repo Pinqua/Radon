@@ -61,7 +61,14 @@ body {
 }
 
 .clr_change_animation {
+  -webkit-transition: all 0.5s;
   transition: all 0.5s;
   -webkit-animation: colorChangeAnimation 2s infinite;
   animation: colorChangeAnimation 2s infinite;
+}
+
+.loader svg {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
 }

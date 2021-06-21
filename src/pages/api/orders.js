@@ -9,6 +9,7 @@ export default async (req, res) => {
       let orders = await db
         .collection("orders")
         .find({ user: session.user.email, payment_status: "paid" })
+        .sort({ timestamp: -1 })
         .toArray();
       orders = JSON.parse(JSON.stringify(orders));
       return res.status(200).json(orders);

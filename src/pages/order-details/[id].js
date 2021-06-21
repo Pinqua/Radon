@@ -7,22 +7,30 @@ import { useSession } from "next-auth/client";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 import Skeleton from "react-loading-skeleton";
+import Custom404 from "../404";
+import Head from "next/head";
 
 function orderDetails() {
-  const [session] = useSession();
+  const [session, loading] = useSession();
   const router = useRouter();
   const { data: order, error } = useSWR(
-    session ? `/api/order-details/${router.query.id}` : null
+    !loading && session ? `/api/order-details/${router.query.id}` : null
   );
 
+  if (!loading && !session) {
+    return <Custom404 />;
+  }
+
   if (error) {
-    order = {};
     alert(error);
     console.error(error);
   }
 
   return (
     <>
+      <Head>
+        <title>Radon | OrderDetails</title>
+      </Head>
       <div className="border rounded-md max-w-screen-xl heightFix mx-auto my-20 shadow-sm">
         <div className="flex items-center space-x-10 p-5 bg-gray-100 text-sm text-gray-700">
           <div>

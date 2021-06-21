@@ -40,7 +40,7 @@ export const cartSlice = createSlice({
         </>,
         {
           position: "top-right",
-          autoClose: 1500,
+          autoClose: 2000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: false,

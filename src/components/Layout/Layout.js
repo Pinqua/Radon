@@ -6,9 +6,12 @@ import Footer from "../Footer/Footer";
 import Head from "next/head";
 import Header from "../Header/Header";
 import useSWR from "swr";
+import { useSession } from "next-auth/client";
+import Loader from "react-loader-spinner";
 
 function Layout({ children }) {
     const { data: products, error } = useSWR("/api/products");
+    const [, loading] = useSession()
 
     if (error) {
         products = []
@@ -47,7 +50,16 @@ function Layout({ children }) {
             </Head>
             <div className="layout">
                 <Header products={products} />
-                {children}
+                {loading ?
+                    <div className="fixed inset-0 flex items-center justify-center bg-white z-50 loader">
+                        <Loader
+                            type="TailSpin"
+                            color="#0a81ab"
+                        />
+                    </div>
+                    :
+                    children
+                }
                 <Footer />
             </div>
         </>

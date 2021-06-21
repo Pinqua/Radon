@@ -10,12 +10,13 @@ import { useRouter } from "next/router";
 import { signIn, signOut, useSession } from "next-auth/client";
 import { useSelector } from "react-redux";
 import { selectItems } from "../../slices/cartSlice";
+import Skeleton from "react-loading-skeleton";
 
 function Header({ products }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const router = useRouter();
-  const [session] = useSession();
+  const [session, loading] = useSession();
   const items = useSelector(selectItems);
   const [dropDown, setDropDown] = useState(false);
   const options = {
@@ -37,7 +38,7 @@ function Header({ products }) {
   };
 
   return (
-    <header className="sticky top-0 inset-x-0 z-50 bg-white text-gray-900">
+    <header className="sticky top-0 inset-x-0 z-40 bg-white text-gray-900">
       <div className="flex items-center w-full max-w-screen-xl py-2 space-x-16 mx-auto">
         <div className="flex items-center">
           <Image
@@ -101,55 +102,59 @@ function Header({ products }) {
           )}
         </div>
         <div className="flex items-center space-x-12 font-medium">
-          {!session ? (
-            <span className="link" onClick={signIn}>
-              Login
-            </span>
-          ) : (
-            <span
-              className="relative"
-              onClick={() => setDropDown((value) => !value)}
-            >
-              <span className="flex items-center cursor-pointer">
-                <img
-                  src={session?.user?.image || "/img/profile_pic.svg"}
-                  loading="lazy"
-                  alt="pic"
-                  width="30"
-                  height="30"
-                  className="object-contain w-10 h-10 rounded-full mr-1 hover:shadow-md"
-                />
-                <ChevronDownIcon className="w-6" />
+          {!loading ? (
+            !session ? (
+              <span className="link" onClick={signIn}>
+                Login
               </span>
-              {dropDown && (
-                <div className="absolute top-14 right-1 w-32 bg-white text-sm rounded shadow-md">
-                  <div
-                    className="w-full cursor-pointer hover:bg-gray-100 p-2 border-b border-gray-200"
-                    onClick={() => router.push("/profile")}
-                  >
-                    Profile
+            ) : (
+              <span
+                className="relative"
+                onClick={() => setDropDown((value) => !value)}
+              >
+                <span className="flex items-center cursor-pointer">
+                  <img
+                    src={session?.user?.image || "/img/profile_pic.svg"}
+                    loading="lazy"
+                    alt="pic"
+                    width="30"
+                    height="30"
+                    className="object-contain w-10 h-10 rounded-full mr-1 hover:shadow-md"
+                  />
+                  <ChevronDownIcon className="w-6" />
+                </span>
+                {dropDown && (
+                  <div className="absolute top-14 right-1 w-32 bg-white text-sm rounded shadow-md">
+                    <div
+                      className="w-full cursor-pointer hover:bg-gray-100 p-2 border-b border-gray-200"
+                      onClick={() => router.push("/profile")}
+                    >
+                      Profile
+                    </div>
+                    <div
+                      className="w-full cursor-pointer hover:bg-gray-100 p-2 border-b border-gray-200"
+                      onClick={() => router.push("/orders")}
+                    >
+                      Orders
+                    </div>
+                    <div
+                      className="w-full cursor-pointer hover:bg-gray-100 p-2 border-b border-gray-200"
+                      onClick={() => router.push("/about")}
+                    >
+                      Contact
+                    </div>
+                    <div
+                      className="w-full cursor-pointer hover:bg-gray-100 p-2"
+                      onClick={signOut}
+                    >
+                      Logout
+                    </div>
                   </div>
-                  <div
-                    className="w-full cursor-pointer hover:bg-gray-100 p-2 border-b border-gray-200"
-                    onClick={() => router.push("/orders")}
-                  >
-                    Orders
-                  </div>
-                  <div
-                    className="w-full cursor-pointer hover:bg-gray-100 p-2 border-b border-gray-200"
-                    onClick={() => router.push("/about")}
-                  >
-                    Contact
-                  </div>
-                  <div
-                    className="w-full cursor-pointer hover:bg-gray-100 p-2"
-                    onClick={signOut}
-                  >
-                    Logout
-                  </div>
-                </div>
-              )}
-            </span>
+                )}
+              </span>
+            )
+          ) : (
+            <Skeleton circle={true} width={40} height={40} />
           )}
           <span className="link" onClick={() => router.push("/orders")}>
             Orders

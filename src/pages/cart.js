@@ -7,6 +7,7 @@ import { selectItems, selectTotal } from "../slices/cartSlice";
 import CartProduct from "../components/CartProduct/CartProduct";
 import { CreditCardIcon } from "@heroicons/react/outline";
 import { useState } from "react";
+import Head from "next/head";
 
 const stripePromise = loadStripe(process.env.stripe_public_key);
 
@@ -29,16 +30,19 @@ function Cart() {
     const result = await stripe.redirectToCheckout({
       sessionId: checkoutSession.data.id,
     });
-    setDisabled(false);
 
     if (result.error) {
       alert(result.error.message);
       console.error(result.error.message);
     }
+    setDisabled(false);
   };
 
   return (
     <>
+      <Head>
+        <title>Radon | Cart</title>
+      </Head>
       <div className="bg-gray-100 py-10 heightFix">
         <main className="max-w-screen-xl mx-auto">
           {items?.length ? (

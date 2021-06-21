@@ -1,10 +1,14 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import Head from "next/head";
 
 function About() {
   return (
     <>
+      <Head>
+        <title>Radon | About</title>
+      </Head>
       <div className="heightFix">
         <div className="mt-26 max-w-screen-xl mx-auto">
           <div className="text-lg font-medium  pt-20">
