@@ -8,6 +8,7 @@ import Currency from "react-currency-formatter";
 import { useRouter } from "next/router";
 import Skeleton from "react-loading-skeleton";
 import { ShoppingCartIcon } from "@heroicons/react/solid";
+import { LightningBoltIcon } from "@heroicons/react/solid";
 
 function ProductDetails({ _id, title, price, description, category, image }) {
   const router = useRouter();
@@ -16,6 +17,13 @@ function ProductDetails({ _id, title, price, description, category, image }) {
     dispatch(
       addToCart({ _id, title, price, description, category, image, qty: 1 })
     );
+
+  const buyNow = () => {
+    dispatch(
+      addToCart({ _id, title, price, description, category, image, qty: 1 })
+    );
+    router.push("/cart");
+  };
   const props = {
     width: 400,
     height: 400,
@@ -66,8 +74,12 @@ function ProductDetails({ _id, title, price, description, category, image }) {
                   <ShoppingCartIcon className="w-4" />
                   <span className="ml-2">Add to Cart</span>
                 </button>
-                <button className=" button px-10 py-2 " onClick={addItemToCart}>
-                  Buy Now
+                <button
+                  className=" button px-10 py-2 flex items-center justify-center"
+                  onClick={buyNow}
+                >
+                  <LightningBoltIcon className="w-4" />
+                  <span className="ml-2">Buy Now</span>
                 </button>
               </div>
             </>

@@ -10,7 +10,7 @@ function Banner() {
   };
 
   return (
-    <div className="flex justify-between items-center w-full max-w-screen-xl mx-auto h-full py-10 bg-white">
+    <div className="flex justify-between items-center w-full max-w-screen-xl mx-auto h-full py-10 bg-white overflow-hidden">
       <div className="max-w-lg flex-col">
         <Fade left>
           <div className="text-blue-light font-extrabold text-7xl leading-snug">

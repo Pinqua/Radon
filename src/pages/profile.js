@@ -20,7 +20,7 @@ function Profile() {
           <h3 className="text-2xl font-semibold border-b-2 border-gray-200 pb-4 text-gray-700">
             Profile
           </h3>
-          <div className="space-y-4 font-medium">
+          <div className="space-y-4 font-medium overflow-hidden">
             <Fade left>
               <img
                 src={session?.user?.image || "/img/profile_pic.svg"}

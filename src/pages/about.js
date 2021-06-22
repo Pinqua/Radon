@@ -16,8 +16,8 @@ function About() {
             <h3 className="text-2xl font-semibold border-b-2 border-gray-200 pb-4 text-gray-700">
               About
             </h3>
-            <div className="flex w-full items-center py-6">
-              <Fade buttom>
+            <div className="flex w-full items-center py-6 overflow-hidden">
+              <Fade left>
                 <div>
                   <Image
                     src="/img/programming.svg"
@@ -26,6 +26,8 @@ function About() {
                     objectFit="contain"
                   />
                 </div>
+              </Fade>
+              <Fade right>
                 <div className="flex-grow max-w-3xl ml-auto">
                   <p>
                     This a E-commerce website build using

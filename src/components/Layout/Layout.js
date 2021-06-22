@@ -5,18 +5,11 @@ import { hydrate } from "../../slices/cartSlice";
 import Footer from "../Footer/Footer";
 import Head from "next/head";
 import Header from "../Header/Header";
-import useSWR from "swr";
 import { useSession } from "next-auth/client";
 import Loader from "react-loader-spinner";
 
 function Layout({ children }) {
-    const { data: products, error } = useSWR("/api/products");
     const [, loading] = useSession()
-
-    if (error) {
-        alert(error)
-        console.error(error);
-    }
 
     useEffect(() => {
         store.subscribe(() => {
@@ -48,7 +41,7 @@ function Layout({ children }) {
                 <meta name="theme-color" content="#ffffff" />
             </Head>
             <div className="layout">
-                <Header products={products} />
+                <Header />
                 {loading ?
                     <div className="fixed inset-0 flex items-center justify-center bg-white z-50 loader">
                         <Loader

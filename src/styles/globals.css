@@ -16,6 +16,9 @@
   .button {
     @apply cursor-pointer rounded text-center p-2 text-sm  text-white md:text-sm bg-gradient-to-b from-blue-light to-blue-dark border border-blue-light  focus:outline-none focus:ring-2 focus:ring-blue-dark active:from-blue-dark;
   }
+  .dropDownOption {
+    @apply w-full cursor-pointer hover:bg-gray-100 py-2 px-3;
+  }
 }
 
 /* Text color change animation */
@@ -85,6 +88,7 @@ body {
 }
 
 .glassmorphism {
+  background-color: white;
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);

@@ -1,10 +1,12 @@
-function getProducts (id) {
-    const { data: products, error } = useSWR("/api/products");
-    return {
-      user: products,
-      isLoading: !error && !data,
-      isError: error
-    }
-  }
+import useSWR from "swr";
 
-  
+const getProducts = () => {
+    const { data, error } = useSWR("/api/products");
+    return {
+        products: data,
+        isLoading: !error && !data,
+        isError: error,
+    };
+};
+
+export default getProducts;
