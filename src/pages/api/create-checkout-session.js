@@ -20,12 +20,11 @@ export default async (req, res) => {
       quantity: item.qty,
       price_data: {
         currency: "INR",
+        //unit_amount_decimal  insted to unit_amount for decimal
         unit_amount: item.price * 100,
         product_data: {
           name: item.title,
-          images: [
-            /*item.image*/
-          ],
+          images: [item.image],
         },
       },
     }));

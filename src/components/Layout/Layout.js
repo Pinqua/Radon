@@ -14,7 +14,6 @@ function Layout({ children }) {
     const [, loading] = useSession()
 
     if (error) {
-        products = []
         alert(error)
         console.error(error);
     }

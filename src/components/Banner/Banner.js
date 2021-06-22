@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import RubberBand from "react-reveal/RubberBand";
-import { ShoppingBagIcon } from "@heroicons/react/solid";
+import Fade from "react-reveal/Fade";
+import { ShoppingBagIcon } from "@heroicons/react/outline";
 
 function Banner() {
   const scrollHandler = () => {
@@ -12,7 +12,7 @@ function Banner() {
   return (
     <div className="flex justify-between items-center w-full max-w-screen-xl mx-auto h-full py-10 bg-white">
       <div className="max-w-lg flex-col">
-        <RubberBand bottom>
+        <Fade left>
           <div className="text-blue-light font-extrabold text-7xl leading-snug">
             <h2 className="text-6xl">Stay Home</h2>
             <h1>Shop Online.</h1>
@@ -28,16 +28,18 @@ function Banner() {
             <ShoppingBagIcon className="mr-2 w-6" />
             Shop Now
           </button>
-        </RubberBand>
+        </Fade>
       </div>
       <div>
-        <Image
-          src="/img/hero.svg"
-          alt="Web Shopping"
-          width={600}
-          height={600}
-          objectFit="contain"
-        />
+        <Fade right>
+          <Image
+            src="/img/hero.svg"
+            alt="Web Shopping"
+            width={600}
+            height={600}
+            objectFit="contain"
+          />
+        </Fade>
       </div>
     </div>
   );

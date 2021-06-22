@@ -1,13 +1,14 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Currency from "react-currency-formatter";
 import { signIn, useSession } from "next-auth/client";
 import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
-import { selectItems, selectTotal } from "../slices/cartSlice";
+import { emptyCart, selectItems, selectTotal } from "../slices/cartSlice";
 import CartProduct from "../components/CartProduct/CartProduct";
 import { CreditCardIcon } from "@heroicons/react/outline";
 import { useState } from "react";
 import Head from "next/head";
+import Image from "next/image";
 
 const stripePromise = loadStripe(process.env.stripe_public_key);
 
@@ -16,6 +17,7 @@ function Cart() {
   const total = useSelector(selectTotal);
   const [session] = useSession();
   const [disabled, setDisabled] = useState(false);
+  const dispatch = useDispatch();
 
   const createCheckoutSession = async () => {
     setDisabled(true);
@@ -51,6 +53,20 @@ function Cart() {
                 <h1 className="text-2xl font-semibold border-b-2 border-gray-200 pb-4 text-gray-700">
                   Shopping Cart
                 </h1>
+                <div className="flex justify-between items-center py-6">
+                  <span className="font-medium text-lg text-blue-light">
+                    Items
+                    <span className="font-semibold text-xl ml-2">
+                      {items?.length}
+                    </span>
+                  </span>
+                  <button
+                    className="button py-2 px-10"
+                    onClick={() => dispatch(emptyCart())}
+                  >
+                    Empty Cart
+                  </button>
+                </div>
                 {items.map((item, i) => (
                   <CartProduct
                     key={`cart-product${item?._id}`}
@@ -67,19 +83,22 @@ function Cart() {
               </div>
             </div>
           ) : (
-            <div className="flex items-center justify-center w-full mt-10">
+            <div className="flex items-center justify-center w-full mt-16">
               <div className="text-center">
-                <img
-                  className="object-contain max-w-sm mx-auto"
+                <Image
                   src="/img/empty_cart.svg"
-                  alt=""
-                  loading="lazy"
+                  alt="Empty Cart"
+                  width={350}
+                  height={350}
+                  objectFit="contain"
                 />
-                <h3 className="text-3xl mt-8">Your Cart is Empty</h3>
+                <h3 className="text-3xl font-medium mt-4">
+                  Your Cart is Empty
+                </h3>
               </div>
             </div>
           )}
-          {items?.length && (
+          {items?.length ? (
             <div className="flex flex-col bg-white p-10 shadow-md rounded-md text-xl my-10">
               <h2 className="whitespace-nowrap font-medium">
                 Subtotal ({items.length} items) :
@@ -108,6 +127,8 @@ function Cart() {
                 </button>
               )}
             </div>
+          ) : (
+            <></>
           )}
         </main>
       </div>

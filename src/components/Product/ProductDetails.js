@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import Currency from "react-currency-formatter";
 import { useRouter } from "next/router";
 import Skeleton from "react-loading-skeleton";
+import { ShoppingCartIcon } from "@heroicons/react/solid";
 
 function ProductDetails({ _id, title, price, description, category, image }) {
   const router = useRouter();
@@ -24,7 +25,7 @@ function ProductDetails({ _id, title, price, description, category, image }) {
 
   return (
     <div className="max-w-screen-xl heightFix mx-auto flex items-center">
-      <div className="flex space-x-10 w-full">
+      <div className="flex space-x-10 justify-between w-full">
         {router.isFallback ? (
           <Skeleton width={400} height={400} />
         ) : (
@@ -34,7 +35,7 @@ function ProductDetails({ _id, title, price, description, category, image }) {
             ) : (
               <Image
                 src={image}
-                alt=""
+                alt="Product Image"
                 width={400}
                 height={400}
                 objectFit="contain"
@@ -57,12 +58,18 @@ function ProductDetails({ _id, title, price, description, category, image }) {
               <p className="text-2xl font-semibold text-gray-700">
                 <Currency quantity={price} currency="INR" />
               </p>
-              <button
-                className="button px-8 py-2 mt-10"
-                onClick={addItemToCart}
-              >
-                Add to Cart
-              </button>
+              <div className="mt-10 flex space-x-6">
+                <button
+                  className="button px-10 py-2 flex items-center justify-center"
+                  onClick={addItemToCart}
+                >
+                  <ShoppingCartIcon className="w-4" />
+                  <span className="ml-2">Add to Cart</span>
+                </button>
+                <button className=" button px-10 py-2 " onClick={addItemToCart}>
+                  Buy Now
+                </button>
+              </div>
             </>
           )}
         </div>

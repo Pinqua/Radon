@@ -29,7 +29,16 @@ function Orders() {
         {session ? (
           <>
             <h2 className="font-medium text-lg my-2 text-green-500">
-              {orders ? `${orders?.length} Orders` : <Skeleton width={100} />}
+              {orders ? (
+                <>
+                  <span className="font-semibold text-xl mr-2">
+                    {orders?.length}
+                  </span>
+                  Orders
+                </>
+              ) : (
+                <Skeleton width={100} />
+              )}
             </h2>
             {orders ? (
               orders.length ? (

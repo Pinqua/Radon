@@ -3,15 +3,19 @@ import { useSession } from "next-auth/client";
 import { useRouter } from "next/router";
 import Custom404 from "./404";
 import Head from "next/head";
+import { useDispatch } from "react-redux";
+import { emptyCart } from "../slices/cartSlice";
 
 function success() {
   const router = useRouter();
   const [session, loading] = useSession();
+  const dispatch = useDispatch();
 
   if (!loading && !session) {
     return <Custom404 />;
+  } else {
+    dispatch(emptyCart());
   }
-
   return (
     <>
       <Head>

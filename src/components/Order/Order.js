@@ -5,11 +5,14 @@ import Currency from "react-currency-formatter";
 function Order({ _id, id, amount_total, timestamp, items }) {
   return (
     <Link href={`/order-details/${_id}`}>
-      <div className="relative border rounded-md cursor-pointer hover:shadow-sm bg-white">
+      <div
+        className="relative border rounded-md cursor-pointer hover:shadow-sm bg-white"
+        title="Click to view order details"
+      >
         <div className="flex items-center space-x-10 p-5 bg-gray-100 text-sm text-gray-600">
           <div>
             <p className="font-bold text-xs">ORDER PLACED</p>
-            <p>{moment.unix(moment(timestamp).unix()).format("DD MMM YYYY")}</p>
+            <p>{moment(timestamp).format("DD MMM YYYY")}</p>
           </div>
           <div>
             <p className="text-xs font-bold">TOTAL</p>
@@ -25,13 +28,13 @@ function Order({ _id, id, amount_total, timestamp, items }) {
           </p>
         </div>
         <div className="p-5 sm:p-10">
-          <div className="flex space-x-6 overflow-x-auto py-4">
+          <div className="flex space-x-6 overflow-x-auto py-4 hideScrollBar">
             {items?.map((item) => (
               <img
                 key={`item-img${item?._id}`}
                 className="h-20 object-contain sm:h-32"
                 src={item?.image}
-                alt="product"
+                alt="Product Image"
                 loading="lazy"
               />
             ))}

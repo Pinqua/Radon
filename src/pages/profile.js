@@ -1,6 +1,7 @@
 import { useSession } from "next-auth/client";
 import Custom404 from "./404";
 import Head from "next/head";
+import Fade from "react-reveal/Fade";
 
 function Profile() {
   const [session, loading] = useSession();
@@ -20,26 +21,28 @@ function Profile() {
             Profile
           </h3>
           <div className="space-y-4 font-medium">
-            <img
-              src={session?.user?.image || "/img/profile_pic.svg"}
-              loading="lazy"
-              alt="pic"
-              width="80"
-              height="80"
-              className="object-contain w-24 h-24 rounded-full hover:shadow-md"
-            />
-            <p>
-              <span className="font-semibold">Name - </span>
-              {session?.user?.name}
-            </p>
-            <p>
-              <span className="font-semibold">Email - </span>
-              {session?.user?.email}
-            </p>
-            <p className="font-medium text-xl pt-8 text-blue-light">
-              "Whoever said money can't buy happiness didn't know where to
-              shop".
-            </p>
+            <Fade left>
+              <img
+                src={session?.user?.image || "/img/profile_pic.svg"}
+                loading="lazy"
+                alt="pic"
+                width="80"
+                height="80"
+                className="object-contain w-24 h-24 rounded-full hover:shadow-md"
+              />
+              <p>
+                <span className="font-semibold">Name - </span>
+                {session?.user?.name}
+              </p>
+              <p>
+                <span className="font-semibold">Email - </span>
+                {session?.user?.email}
+              </p>
+              <p className="font-medium text-xl pt-8 text-blue-light">
+                "Whoever said money can't buy happiness didn't know where to
+                shop".
+              </p>
+            </Fade>
           </div>
         </div>
       </div>

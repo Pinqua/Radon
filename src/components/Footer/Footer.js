@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 
 function Footer() {
     return (
@@ -14,47 +15,51 @@ function Footer() {
                             <span className="cursor-pointer hover:text-white">Orders</span>
                         </Link>
                     </div>
-                    <div className="flex items-center space-x-8">
-                        <Link href="/">
-                            <img
-                                width="20"
-                                height="20"
+                    <div className="flex items-center space-x-6">
+                        <div>
+                            <Image
+                                width={20}
+                                height={20}
                                 src="/img/social/gmail.svg"
-                                loading="lazy"
+                                objectFit="contain"
                                 className="cursor-pointer"
                                 alt="gmail"
+                                onClick={() => { }}
                             />
-                        </Link>
-                        <Link href="/">
-                            <img
-                                width="20"
-                                height="20"
+                        </div>
+                        <div>
+                            <Image
+                                width={20}
+                                height={20}
                                 src="/img/social/facebook.svg"
-                                loading="lazy"
+                                objectFit="contain"
+                                className="cursor-pointer"
                                 alt="facebook"
-                                className="cursor-pointer"
+                                onClick={() => { }}
                             />
-                        </Link>
-                        <Link href="/">
-                            <img
-                                width="20"
-                                height="20"
+                        </div>
+                        <div>
+                            <Image
+                                width={20}
+                                height={20}
                                 src="/img/social/instagram.svg"
-                                loading="lazy"
+                                objectFit="contain"
+                                className="cursor-pointer"
                                 alt="instagram"
-                                className="cursor-pointer"
+                                onClick={() => { }}
                             />
-                        </Link>
-                        <Link href="/">
-                            <img
-                                width="20"
-                                height="20"
+                        </div>
+                        <div>
+                            <Image
+                                width={20}
+                                height={20}
                                 src="/img/social/twitter.svg"
-                                loading="lazy"
-                                alt="twitter"
+                                objectFit="contain"
                                 className="cursor-pointer"
+                                alt="twitter"
+                                onClick={() => { }}
                             />
-                        </Link>
+                        </div>
                     </div>
                 </div>
                 <p className="mt-6 text-gray-200 text-center">

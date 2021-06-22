@@ -83,10 +83,14 @@ export const cartSlice = createSlice({
       }
       state.items = newBastek;
     },
+    //Empty the cart
+    emptyCart: (state, action) => {
+      state.items = [];
+    },
   },
 });
 
-export const { addToCart, removeFromCart, updateQty, hydrate } =
+export const { addToCart, removeFromCart, updateQty, hydrate, emptyCart } =
   cartSlice.actions;
 
 // Selectors - This is how we pull information from the Global store slice

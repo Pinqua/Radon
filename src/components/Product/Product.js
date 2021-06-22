@@ -5,6 +5,7 @@ import { addToCart } from "../../slices/cartSlice";
 import Fade from "react-reveal/Fade";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { ShoppingCartIcon } from "@heroicons/react/solid";
 
 function Product({ _id, title, price, description, category, image }) {
   const dispatch = useDispatch();
@@ -39,8 +40,12 @@ function Product({ _id, title, price, description, category, image }) {
         <div className="mb-5 mt-2 font-bold text-gray-700">
           <Currency quantity={price} currency="INR" />
         </div>
-        <button className="mt-auto button" onClick={addItemToCart}>
-          Add to Cart
+        <button
+          className="mt-auto button flex items-center justify-center"
+          onClick={addItemToCart}
+        >
+          <ShoppingCartIcon className="w-4" />
+          <span className="ml-2">Add to Cart</span>
         </button>
       </div>
     </Fade>

@@ -13,8 +13,7 @@ export default async (req, res) => {
   }
 };
 
+//await db.collection("products").deleteMany({})
 /*prods.forEach(async(itm)=>{
         await db.collection("products").insertOne(itm)
     })*/
-
-//await db.collection("products").deleteMany({})
