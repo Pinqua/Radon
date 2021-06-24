@@ -26,7 +26,13 @@ function Dropdown({ handleClickOutside }) {
       >
         Contact
       </div>
-      <div className="dropDownOption" onClick={signOut}>
+      <div
+        className="dropDownOption"
+        onClick={() => {
+          router.replace("/");
+          signOut();
+        }}
+      >
         Logout
       </div>
     </div>

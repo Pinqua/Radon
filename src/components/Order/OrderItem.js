@@ -7,12 +7,12 @@ import { useRouter } from "next/router";
 function OrderItem({ item }) {
     const router = useRouter();
     return (
-        <div className="flex my-4 text-sm text-gray-700 p-6 border border-gray-200 justify-between">
+        <div className="flex sm:flex-row flex-col-reverse my-4 text-sm text-gray-700 p-6 border border-gray-200 sm:justify-between gap-6">
             <div>
                 <span className="link font-semibold">
                     <Link href={`/product-details/${item?._id}`}>{item?.title}</Link>
                 </span>
-                <div className="mt-1 mb-2">
+                <div className="mt-2">
                     <p>
                         <span>Quantity - </span>
                         {item?.qty}
@@ -23,7 +23,7 @@ function OrderItem({ item }) {
                     </p>
                 </div>
             </div>
-            <div className="ml-6">
+            <div className="sm:mx-0 sm:ml-6 min-w-max  mx-auto">
                 <Image
                     src={item?.image}
                     width={120}

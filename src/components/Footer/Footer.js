@@ -4,10 +4,10 @@ import Image from "next/image";
 
 function Footer() {
     return (
-        <div className="bg-gray-800 py-8 px-6 text-gray-200">
+        <div className="bg-gray-800 py-8 px-6 text-gray-200  lg:text-base text-sm">
             <div className="max-w-screen-xl w-full mx-auto">
                 <div className="flex justify-between items-center">
-                    <div className="flex items-center space-x-8">
+                    <div className="flex items-center lg:space-x-8 space-x-4">
                         <Link href="/">
                             <span className="cursor-pointer hover:text-white">Home</span>
                         </Link>
@@ -15,8 +15,8 @@ function Footer() {
                             <span className="cursor-pointer hover:text-white">Orders</span>
                         </Link>
                     </div>
-                    <div className="flex items-center space-x-6">
-                        <div>
+                    <div className="flex items-center space-x-4 md:space-x-6">
+                        <div className="lg:w-6 md:w-5 w-4">
                             <Image
                                 width={20}
                                 height={20}
@@ -27,7 +27,7 @@ function Footer() {
                                 onClick={() => { }}
                             />
                         </div>
-                        <div>
+                        <div className="lg:w-6 md:w-5 w-4">
                             <Image
                                 width={20}
                                 height={20}
@@ -38,7 +38,7 @@ function Footer() {
                                 onClick={() => { }}
                             />
                         </div>
-                        <div>
+                        <div className="lg:w-6 md:w-5 w-4">
                             <Image
                                 width={20}
                                 height={20}
@@ -49,7 +49,7 @@ function Footer() {
                                 onClick={() => { }}
                             />
                         </div>
-                        <div>
+                        <div className="lg:w-6 md:w-5 w-4">
                             <Image
                                 width={20}
                                 height={20}

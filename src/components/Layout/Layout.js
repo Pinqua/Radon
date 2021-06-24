@@ -7,6 +7,7 @@ import Head from "next/head";
 import Header from "../Header/Header";
 import { useSession } from "next-auth/client";
 import Loader from "react-loader-spinner";
+import HeaderMobile from "../Header/HeaderMobile";
 
 function Layout({ children }) {
     const [, loading] = useSession()
@@ -42,6 +43,7 @@ function Layout({ children }) {
             </Head>
             <div className="layout">
                 <Header />
+                <HeaderMobile />
                 {loading ?
                     <div className="fixed inset-0 flex items-center justify-center bg-white z-50 loader">
                         <Loader

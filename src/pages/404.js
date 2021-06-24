@@ -9,15 +9,17 @@ export default function Custom404() {
       </Head>
       <div className="heightFix flex items-center justify-center text-center">
         <div className="max-w-screen-xl mx-auto flex-col items-center justify-center">
-          <div className="mb-10">
-            <h1 className="font-extrabold text-9xl text-blue-light clr_change_animation">
+          <div className="sm:mb-10 mb-6">
+            <h1 className="font-extrabold sm:text-9xl text-8xl text-blue-light clr_change_animation">
               404
             </h1>
-            <p className="mt-6 uppercase font-medium text-2xl">
+            <p className="sm:mt-6 mt-4 uppercase font-medium sm:text-2xl text-xl">
               Page Not Found
             </p>
           </div>
-          <button className="button py-2 px-10 text-lg">HomePage</button>
+          <button className="button py-2 px-10 lg:text-lg text-base">
+            HomePage
+          </button>
         </div>
       </div>
     </>

@@ -19,7 +19,7 @@ function Product({ _id, title, price, description, category, image }) {
 
   return (
     <Fade bottom>
-      <div className="relative flex flex-col m-4 bg-white z-30 md:p-8 p-6 rounded-md shadow-lg">
+      <div className="relative flex flex-col   bg-white z-20  md:p-8 p-6 rounded-md shadow-lg">
         <p className="absolute top-2 right-3 text-xs italic text-gray-400 capitalize">
           {category}
         </p>

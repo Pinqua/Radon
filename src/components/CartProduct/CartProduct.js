@@ -50,10 +50,10 @@ function CartProduct({
   return (
     <Fade bottom>
       <div
-        className={`block bg-white py-6 sm:grid sm:grid-cols-5 sm:my-3 ${border ? "border-b border-gray-200" : ""
+        className={`block bg-white py-6 sm:grid sm:grid-cols-5 ${border ? "border-b border-gray-300" : ""
           }`}
       >
-        <div className="text-center sm:text-left">
+        <div className="text-center sm:text-left my-auto">
           <Image
             src={image}
             width={150}
@@ -65,14 +65,14 @@ function CartProduct({
         </div>
 
         {/* Middle */}
-        <div className="col-span-3 mx-5 mb-4 sm:mb-0">
-          <h4 className="my-3 link text-xl font-medium">
+        <div className="col-span-3 sm:p-4 mt-2 mb-6 sm:my-0">
+          <h4 className="mb-3 link lg:text-xl md:text-lg text-base  font-medium">
             <Link href={`/product-details/${_id}`}>{title}</Link>
           </h4>
-          <p className="text-sm my-2 mb-4 line-clamp-3 link text-gray-500">
+          <p className="lg:text-sm text-xs my-2  mb-4 line-clamp-3 link text-gray-500">
             <Link href={`/product-details/${_id}`}>{description}</Link>
           </p>
-          <span className="font-medium">
+          <span className="font-medium md:text-base text-sm">
             {qty} × <Currency quantity={price} currency="INR" /> =
             <span className="font-bold text-gray-700 mx-1">
               <Currency quantity={total} currency="INR" />
@@ -81,19 +81,24 @@ function CartProduct({
         </div>
 
         {/* Buttons on the right of the products */}
-        <div className="flex flex-col space-y-2 my-auto justify-self-end">
-          <div className="flex justify-between xs:justify-start">
+        <div className="flex flex-col space-y-4 my-auto  justify-self-end">
+          <div className="flex justify-between">
             <button className="button sm:p-1" onClick={decQty}>
               <MinusSmIcon className="h-5" />
             </button>
             <div className="p-2 whitespace-normal sm:p-1 sm:whitespace-nowrap">
-              <span className="font-bold text-gray-700">{qty}</span>
+              <span className="font-bold md:text-base text-sm text-gray-700">
+                {qty}
+              </span>
             </div>
             <button className="button sm:p-1" onClick={incQty}>
               <PlusIcon className="h-5" />
             </button>
           </div>
-          <button className="button py-2 px-10" onClick={removeItemFromCart}>
+          <button
+            className="button py-2  lg:px-10 md:px-8 px-6"
+            onClick={removeItemFromCart}
+          >
             Remove
           </button>
         </div>

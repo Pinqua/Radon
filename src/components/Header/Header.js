@@ -19,8 +19,8 @@ function Header() {
 
   return (
     <Fade top>
-      <header className="sticky top-0 inset-x-0 z-40 bg-white text-gray-900 glassmorphism">
-        <div className="flex items-center w-full max-w-screen-xl py-2 space-x-16 mx-auto">
+      <header className="sticky top-0 inset-x-0 z-30 bg-white text-gray-900 glassmorphism px-6 md:block hidden">
+        <div className="flex items-center w-full max-w-screen-xl py-2 xl:space-x-16 lg:space-x-12  space-x-7  mx-auto">
           <div className="flex items-center">
             <Image
               src="/img/Radon.svg"
@@ -35,7 +35,7 @@ function Header() {
           <div className="flex-grow">
             <Search />
           </div>
-          <div className="flex items-center space-x-12 font-medium">
+          <div className="flex items-center xl:space-x-12  lg:space-x-10 space-x-7  font-medium  lg:text-base text-sm">
             {!loading ? (
               !session ? (
                 <span className="link" onClick={signIn}>
@@ -55,7 +55,7 @@ function Header() {
                       height="24"
                       className="object-contain w-10 h-10 rounded-full mr-1 hover:shadow-md"
                     />
-                    <ChevronDownIcon className="w-6" />
+                    <ChevronDownIcon className="lg:w-6 w-4" />
                   </span>
                   {dropDown && (
                     <div className="absolute top-14 right-1">
@@ -78,7 +78,7 @@ function Header() {
             className="relative cursor-pointer"
             onClick={() => router.push("/cart")}
           >
-            <ShoppingCartIcon className="w-10 link" />
+            <ShoppingCartIcon className="xl:w-10 lg:w-9 w-8 link" />
             <div className="absolute -top-2 -right-1 rounded-full text-white bg-blue-light p-1 flex items-center justify-center text-xs font-extrabold">
               {items.length}
             </div>

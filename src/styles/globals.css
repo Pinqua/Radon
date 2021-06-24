@@ -14,7 +14,10 @@
     @apply cursor-pointer  hover:text-blue-light active:text-blue-light;
   }
   .button {
-    @apply cursor-pointer rounded text-center p-2 text-sm  text-white md:text-sm bg-gradient-to-b from-blue-light to-blue-dark border border-blue-light  focus:outline-none focus:ring-2 focus:ring-blue-dark active:from-blue-dark;
+    @apply cursor-pointer rounded text-center p-2 text-sm font-medium  text-white  bg-gradient-to-b from-blue-light to-blue-dark border border-blue-light  focus:outline-none focus:ring-2 focus:ring-blue-dark active:from-blue-dark;
+  }
+  .button-green {
+    @apply cursor-pointer rounded text-center p-2 text-sm font-medium text-white  bg-gradient-to-b from-green-500 to-green-800 border-green-500  focus:outline-none focus:ring-2 focus:ring-green-500 active:from-green-800;
   }
   .dropDownOption {
     @apply w-full cursor-pointer hover:bg-gray-100 py-2 px-3;
@@ -42,7 +45,6 @@
 
 html,
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -60,7 +62,8 @@ body {
   object-fit: contain;
   cursor: pointer;
   width: 100%;
-  max-width: 500px;
+  max-width: 450px;
+  margin: auto;
 }
 
 .clr_change_animation {
@@ -73,7 +76,6 @@ body {
 .loader svg {
   width: 150px;
   height: 150px;
-  overflow: hidden;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -92,4 +94,43 @@ body {
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
+}
+
+.layout,
+.sideBarMenu {
+  min-width: 320px;
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db #9ca3af;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #9ca3af;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #d1d5db;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 780px) {
+  .loader svg {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .heightFix {
+    min-height: calc(100vh - 200px);
+    height: 100%;
+  }
 }

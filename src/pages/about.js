@@ -10,15 +10,15 @@ function About() {
       <Head>
         <title>Radon | About</title>
       </Head>
-      <div className="heightFix">
-        <div className="mt-26 max-w-screen-xl mx-auto">
-          <div className="text-lg font-medium  pt-20">
-            <h3 className="text-2xl font-semibold border-b-2 border-gray-200 pb-4 text-gray-700">
+      <div className="heightFix px-6">
+        <div className="max-w-screen-xl mx-auto md:py-20 py-12 pb-20">
+          <div className="xl:text-lg  sm:text-base text-sm  font-medium">
+            <h3 className="sm:text-2xl text-xl font-semibold border-b-2 border-gray-200 pb-4 text-gray-700">
               About
             </h3>
-            <div className="flex w-full items-center py-6 overflow-hidden">
+            <div className="flex md:gap-8 md:flex-row flex-col w-full items-center overflow-hidden">
               <Fade left>
-                <div>
+                <div className="mx-auto md:w-3/4 md:max-w-lg  max-w-xs">
                   <Image
                     src="/img/programming.svg"
                     width={400}
@@ -28,17 +28,17 @@ function About() {
                 </div>
               </Fade>
               <Fade right>
-                <div className="flex-grow max-w-3xl ml-auto">
+                <div className="flex-grow ml-auto">
                   <p>
                     This a E-commerce website build using
                     <span className="link text-blue-light underline mx-1">
-                      <Link href="https://nextjs.org/"> Next.js ,</Link>
+                      <Link href="https://nextjs.org/"> Next.js,</Link>
                     </span>
                     <span className="link text-blue-light underline mx-1">
-                      <Link href="https://redux-toolkit.js.org/"> Redux ,</Link>
+                      <Link href="https://redux-toolkit.js.org/"> Redux,</Link>
                     </span>
                     <span className="link text-blue-light underline mx-1">
-                      <Link href="https://tailwindcss.com"> Tailwindcss ,</Link>
+                      <Link href="https://tailwindcss.com"> Tailwindcss,</Link>
                     </span>
                     <span className="link text-blue-light underline mx-1">
                       <Link href="https://cloud.mongodb.com/"> MongoDB </Link>

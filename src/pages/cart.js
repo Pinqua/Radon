@@ -45,12 +45,12 @@ function Cart() {
       <Head>
         <title>Radon | Cart</title>
       </Head>
-      <div className="bg-gray-100 py-10 heightFix">
+      <div className="bg-gray-100 py-10 md:px-6 heightFix">
         <main className="max-w-screen-xl mx-auto">
           {items?.length ? (
             <div className="flex-grow my-6 shadow rounded-md">
-              <div className="flex flex-col p-8 bg-white">
-                <h1 className="text-2xl font-semibold border-b-2 border-gray-200 pb-4 text-gray-700">
+              <div className="flex flex-col md:p-8  p-6  bg-white">
+                <h1 className="sm:text-2xl text-xl  font-semibold border-b-2 border-gray-200 pb-4 text-gray-700">
                   Shopping Cart
                 </h1>
                 <div className="flex justify-between items-center py-6">
@@ -61,7 +61,7 @@ function Cart() {
                     </span>
                   </span>
                   <button
-                    className="button py-2 px-10"
+                    className="button py-2 px-8 xs:px-10"
                     onClick={() => dispatch(emptyCart())}
                   >
                     Empty Cart
@@ -83,8 +83,8 @@ function Cart() {
               </div>
             </div>
           ) : (
-            <div className="flex items-center justify-center w-full mt-16">
-              <div className="text-center">
+            <div className="flex items-center justify-center w-full  px-6 sm:py-20 py-10">
+              <div className="text-center md:max-w-none mx-auto max-w-xs">
                 <Image
                   src="/img/empty_cart.svg"
                   alt="Empty Cart"
@@ -92,35 +92,35 @@ function Cart() {
                   height={350}
                   objectFit="contain"
                 />
-                <h3 className="text-3xl font-medium mt-4">
+                <h3 className="lg:text-3xl text-2xl    font-medium mt-4">
                   Your Cart is Empty
                 </h3>
               </div>
             </div>
           )}
           {items?.length ? (
-            <div className="flex flex-col bg-white p-10 shadow-md rounded-md text-xl my-10">
-              <h2 className="whitespace-nowrap font-medium">
+            <div className="flex flex-col bg-white md:p-10  py-8 px-6 shadow-md rounded-md md:text-xl sm:text-lg xs:text-base text-sm  my-10">
+              <h2 className="whitespace-nowrap font-semibold">
                 Subtotal ({items.length} items) :
-                <span className="font-bold text-gray-700 mx-2">
+                <span className="font-bold text-red-500 mx-2">
                   <Currency quantity={total} currency="INR" />
                 </span>
               </h2>
               {session ? (
                 <button
                   role="link"
-                  className={`button mt-6 flex items-center justify-center text-lg py-2 ${disabled ? "opacity-50" : ""
+                  className={`button mt-6 flex items-center justify-center lg:text-lg text-base  py-2 ${disabled ? "opacity-50" : ""
                     }`}
                   onClick={!disabled ? createCheckoutSession : () => { }}
                   disabled={disabled}
                 >
-                  <CreditCardIcon className="w-8" />
+                  <CreditCardIcon className="sm:w-8 w-6" />
                   <span className="ml-2">Proceed to checkout </span>
                 </button>
               ) : (
                 <button
                   role="link"
-                  className="button mt-6 text-lg py-2"
+                  className="button mt-6 lg:text-lg text-base py-2"
                   onClick={signIn}
                 >
                   Sign in to checkout
