@@ -32,7 +32,7 @@ function ProductDetails({ _id, title, price, description, category, image }) {
             <Skeleton width={400} height={400} />
           ) : (
             <Fade left>
-              <div className="product_image  mx-auto">
+              <div className="mx-auto">
                 <Image
                   src={image}
                   alt="Product Image"

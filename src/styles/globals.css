@@ -57,15 +57,6 @@ body {
   height: 100%;
 }
 
-.product_image img {
-  -o-object-fit: contain;
-  object-fit: contain;
-  cursor: pointer;
-  width: 100%;
-  max-width: 450px;
-  margin: auto;
-}
-
 .clr_change_animation {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;

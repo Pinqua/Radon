@@ -12,7 +12,7 @@ function About() {
       </Head>
       <div className="heightFix px-6">
         <div className="max-w-screen-xl mx-auto md:py-20 py-12 pb-20">
-          <div className="xl:text-lg  sm:text-base text-sm  font-medium">
+          <div className="xl:text-lg text-base   font-medium">
             <h3 className="sm:text-2xl text-xl font-semibold border-b-2 border-gray-200 pb-4 text-gray-700">
               About
             </h3>

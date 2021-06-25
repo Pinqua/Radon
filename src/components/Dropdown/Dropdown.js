@@ -3,9 +3,9 @@ import { useRouter } from "next/router";
 import React from "react";
 import onClickOutside from "react-onclickoutside";
 
-function Dropdown({ handleClickOutside }) {
+function Dropdown({ hideDropDown }) {
   const router = useRouter();
-  Dropdown.handleClickOutside = handleClickOutside;
+  Dropdown.handleClickOutside = hideDropDown;
   return (
     <div className="w-32 font-medium bg-white text-sm rounded shadow overflow-hidden border border-gray-100">
       <div

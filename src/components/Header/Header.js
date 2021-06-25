@@ -59,7 +59,7 @@ function Header() {
                   </span>
                   {dropDown && (
                     <div className="absolute top-14 right-1">
-                      <Dropdown handleClickOutside={() => setDropDown(false)} />
+                      <Dropdown hideDropDown={() => setDropDown(false)} />
                     </div>
                   )}
                 </span>
