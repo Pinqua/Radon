@@ -58,7 +58,7 @@ function Orders() {
                     )}
                   </div>
                 ) : (
-                  <div className="h-full flex items-center justify-center mt-16">
+                  <div className="h-full flex items-center justify-center mt-16 sm:w-auto w-3/4 mx-auto sm:max-w-xs ">
                     <Image
                       src="/img/empty.svg"
                       width={300}
