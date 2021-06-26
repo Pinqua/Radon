@@ -124,7 +124,6 @@ function SideBarMenu({ closeSideBar }) {
                 onClick={() => {
                   router.replace("/");
                   signOut();
-                  router.replace("/");
                 }}
                 className="link inline-flex"
               >
