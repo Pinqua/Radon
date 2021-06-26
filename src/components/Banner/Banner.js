@@ -11,7 +11,7 @@ function Banner() {
 
   return (
     <div className="px-6  sm:py-16  xs:py-14 py-12">
-      <div className="flex flex-col md:flex-row  md:justify-between md:items-center w-full max-w-screen-xl mx-auto h-full  bg-white overflow-hidden md:gap-1 gap-4">
+      <div className="flex flex-col md:flex-row  md:justify-between md:items-center w-full max-w-screen-xl mx-auto h-full  bg-white overflow-hidden md:gap-1 gap-4 p-0.5">
         <div className="max-w-lg">
           <Fade left>
             <div className="text-blue-light font-extrabold">
@@ -27,7 +27,7 @@ function Banner() {
               want 24x7.
             </p>
             <button
-              className="button ml-1 lg:px-10 lg:py-2 px-8  xl:text-xl lg:text-lg text-base flex items-center justify-center"
+              className="button lg:px-10 lg:py-2 px-8  xl:text-xl lg:text-lg text-base flex items-center justify-center"
               onClick={scrollHandler}
             >
               <ShoppingBagIcon className="mr-2 xl:w-6 w-5" />

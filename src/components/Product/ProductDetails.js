@@ -27,7 +27,7 @@ function ProductDetails({ _id, title, price, description, category, image }) {
   return (
     <div className="heightFix px-6 lg:py-32 md:py-28 py-12 pb-20">
       <div className="max-w-screen-xl flex items-center mx-auto">
-        <div className="flex md:flex-row flex-col md:justify-between w-full md:gap-4 gap-8 overflow-hidden">
+        <div className="flex md:flex-row flex-col md:justify-between w-full md:gap-4 gap-8 overflow-hidden p-0.5">
           {router.isFallback ? (
             <Skeleton width={400} height={400} />
           ) : (
