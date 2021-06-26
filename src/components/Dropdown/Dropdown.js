@@ -30,7 +30,7 @@ function Dropdown({ hideDropDown }) {
         className="dropDownOption"
         onClick={() => {
           router.replace("/");
-          signOut();
+          signOut({ redirect: false });
         }}
       >
         Logout

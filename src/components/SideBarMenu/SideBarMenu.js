@@ -123,7 +123,7 @@ function SideBarMenu({ closeSideBar }) {
               <span
                 onClick={() => {
                   router.replace("/");
-                  signOut();
+                  signOut({ redirect: false });
                 }}
                 className="link inline-flex"
               >
