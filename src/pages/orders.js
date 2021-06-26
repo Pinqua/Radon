@@ -84,7 +84,7 @@ function Orders() {
                   </span>
                   in to view your orders.
                 </h2>
-                <div className="md:max-w-none max-w-xs mx-auto">
+                <div className="md:max-w-none max-w-xs sm:w-auto w-3/4 mx-auto">
                   <Image
                     src="/img/authentication.svg"
                     width={450}
