@@ -14,10 +14,10 @@
     @apply cursor-pointer  hover:text-blue-light active:text-blue-light;
   }
   .button {
-    @apply cursor-pointer rounded text-center p-2 text-sm font-medium  text-white  bg-gradient-to-b from-blue-light to-blue-dark border border-blue-light  focus:outline-none focus:ring-2 focus:ring-blue-dark active:from-blue-dark;
+    @apply cursor-pointer rounded text-center p-2 text-sm   text-white  bg-gradient-to-b from-blue-light to-blue-dark border border-blue-light  focus:outline-none focus:ring-2 focus:ring-blue-dark active:from-blue-dark;
   }
   .button-green {
-    @apply cursor-pointer rounded text-center p-2 text-sm font-medium text-white  bg-gradient-to-b from-green-500 to-green-800 border-green-500  focus:outline-none focus:ring-2 focus:ring-green-500 active:from-green-800;
+    @apply cursor-pointer rounded text-center p-2 text-sm  text-white  bg-gradient-to-b from-green-500 to-green-800 border-green-500  focus:outline-none focus:ring-2 focus:ring-green-500 active:from-green-800;
   }
   .dropDownOption {
     @apply w-full cursor-pointer hover:bg-gray-100 py-2 px-3;
@@ -92,26 +92,6 @@ body {
 }
 .sideBarMenu {
   min-width: 250px;
-}
-
-/* Works on Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #d1d5db #9ca3af;
-}
-
-/* Works on Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-  width: 6px;
-}
-
-*::-webkit-scrollbar-track {
-  background: #9ca3af;
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: #d1d5db;
-  border-radius: 10px;
 }
 
 @media only screen and (max-width: 780px) {

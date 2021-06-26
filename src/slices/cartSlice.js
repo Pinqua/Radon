@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { toast } from "react-toastify";
+import addedToCartToast from "../util/addedToCartToast";
 
 const initialState = {
   items: [],
@@ -29,27 +29,7 @@ export const cartSlice = createSlice({
         state.items = [...state.items, action.payload];
       }
       //Toast to indicate item added to cart
-      toast.success(
-        <div className="font-Poppins">
-          <span className="font-bold text-lg">Added to cart</span>
-          <br />
-          <span>
-            {action.payload.title.slice(0, 55)}
-            {action.payload.title.length > 55 ? "…" : ""}
-          </span>
-        </div>,
-
-        {
-          position: "top-right",
-          autoClose: 2000,
-          style: { background: "linear-gradient(to bottom,#10B981,#047857)" },
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: false,
-          draggable: true,
-          draggablePercent: 20,
-        }
-      );
+      addedToCartToast(action.payload.image, action.payload.title);
     },
     //Update the quantity of item in cart
     updateQty: (state, action) => {
