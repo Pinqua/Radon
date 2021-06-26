@@ -92,15 +92,15 @@ function Cart() {
                   height={350}
                   objectFit="contain"
                 />
-                <h3 className="lg:text-3xl text-2xl   font-medium mt-4">
+                <h3 className="lg:text-3xl text-2xl font-medium mt-4">
                   Your Cart is Empty
                 </h3>
               </div>
             </div>
           )}
           {items?.length ? (
-            <div className="flex flex-col bg-white md:p-10  py-8 px-6 shadow-md rounded-md md:text-xl sm:text-lg xs:text-base text-sm  my-10">
-              <h2 className="whitespace-nowrap font-semibold">
+            <div className="flex flex-col bg-white md:p-10  py-8 px-6 shadow-md rounded-md md:text-xl sm:text-lg text-base my-10">
+              <h2 className="whitespace-nowrap font-semibold overflow-x-auto hideScrollBar">
                 Subtotal ({items.length} items) :
                 <span className="font-bold text-red-500 mx-2">
                   <Currency quantity={total} currency="INR" />
