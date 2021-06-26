@@ -51,7 +51,7 @@ function HeaderMobile() {
         </header>
       </Fade>
       <div
-        className={`z-40 fixed inset-y-0 left-0 overflow-hidden transition-all duration-700  shadow-2xl  ${showSideBar ? "translate-x-0" : "-translate-x-full"
+        className={`z-40 fixed inset-y-0 left-0 overflow-hidden transition-all duration-300  shadow-2xl  ${showSideBar ? "translate-x-0" : "-translate-x-full"
           }
           `}
       >
