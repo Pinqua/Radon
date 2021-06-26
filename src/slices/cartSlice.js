@@ -31,11 +31,11 @@ export const cartSlice = createSlice({
       //Toast to indicate item added to cart
       toast.success(
         <div className="font-Poppins">
-          <span className="font-bold">Added to cart</span>
+          <span className="font-bold text-lg">Added to cart</span>
           <br />
-          <span className="text-sm font-medium">
-            {action.payload.title.slice(0, 60)}
-            {action.payload.title.length > 60 ? "…" : ""}
+          <span>
+            {action.payload.title.slice(0, 55)}
+            {action.payload.title.length > 55 ? "…" : ""}
           </span>
         </div>,
 
