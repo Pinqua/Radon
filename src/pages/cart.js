@@ -5,7 +5,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
 import { emptyCart, selectItems, selectTotal } from "../slices/cartSlice";
 import CartProduct from "../components/CartProduct/CartProduct";
-import { CreditCardIcon } from "@heroicons/react/outline";
+import { CreditCardIcon } from "@heroicons/react/solid";
 import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
@@ -114,7 +114,7 @@ function Cart() {
                   onClick={!disabled ? createCheckoutSession : () => { }}
                   disabled={disabled}
                 >
-                  <CreditCardIcon className="sm:w-8 w-6" />
+                  <CreditCardIcon className="sm:w-6 w-5" />
                   <span className="ml-2">Proceed to checkout </span>
                 </button>
               ) : (
