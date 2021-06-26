@@ -71,7 +71,7 @@ function SideBarMenu({ closeSideBar }) {
           <div>
             <span
               onClick={() => sideBarClickHandler("/")}
-              className="link inline-flex leading-10"
+              className="link inline-flex"
             >
               <HomeIcon className="w-5 mr-6" /> Home
             </span>
@@ -80,7 +80,7 @@ function SideBarMenu({ closeSideBar }) {
             <div>
               <span
                 onClick={() => sideBarClickHandler("/profile")}
-                className="link inline-flex leading-10"
+                className="link inline-flex"
               >
                 <UserCircleIcon className="w-5 mr-6" /> Profile
               </span>
@@ -89,7 +89,7 @@ function SideBarMenu({ closeSideBar }) {
           <div>
             <span
               onClick={() => sideBarClickHandler("/cart")}
-              className="link inline-flex leading-10"
+              className="link inline-flex"
             >
               <ShoppingCartIcon className="w-5 mr-6" /> Cart
             </span>
@@ -97,7 +97,7 @@ function SideBarMenu({ closeSideBar }) {
           <div>
             <span
               onClick={() => sideBarClickHandler("/orders")}
-              className="link inline-flex leading-10"
+              className="link inline-flex"
             >
               <ShoppingBagIcon className="w-5 mr-6" /> Orders
             </span>
@@ -105,7 +105,7 @@ function SideBarMenu({ closeSideBar }) {
           <div>
             <span
               onClick={() => sideBarClickHandler("/about")}
-              className="link inline-flex leading-10"
+              className="link inline-flex"
             >
               <MailIcon className="w-5 mr-6" /> Contact
             </span>
@@ -113,7 +113,7 @@ function SideBarMenu({ closeSideBar }) {
           <div>
             <span
               onClick={() => sideBarClickHandler("/about")}
-              className="link inline-flex leading-10"
+              className="link inline-flex"
             >
               <InformationCircleIcon className="w-5 mr-6" /> About
             </span>
@@ -126,7 +126,7 @@ function SideBarMenu({ closeSideBar }) {
                   signOut();
                   router.replace("/");
                 }}
-                className="link inline-flex leading-10"
+                className="link inline-flex"
               >
                 <LogoutIcon className="w-5 mr-6" /> Logout
               </span>

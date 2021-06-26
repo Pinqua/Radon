@@ -35,14 +35,13 @@ const addedToCartToast = (image, title) => {
       style: {
         background: "white",
         color: "#1f2937",
-        fontFamily: "Poppins",
+        fontFamily: "Poppins, sans-serif",
         height: "auto",
       },
       hideProgressBar: false,
-      closeOnClick: true,
       pauseOnHover: false,
       draggable: true,
-      draggablePercent: 20,
+      draggablePercent: 50,
     }
   );
 };

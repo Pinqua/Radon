@@ -29,10 +29,10 @@ function Footer() {
                         </Link>
                     </div>
                     <div className="flex items-center space-x-4 md:space-x-6">
-                        <div className="lg:w-6 md:w-5 w-4">
+                        <div className="md:w-6 w-5  my-auto">
                             <Image
-                                width={20}
-                                height={20}
+                                width={25}
+                                height={25}
                                 src="/img/social/email.svg"
                                 objectFit="contain"
                                 className="cursor-pointer"
@@ -40,10 +40,10 @@ function Footer() {
                                 onClick={gmailHandler}
                             />
                         </div>
-                        <div className="lg:w-6 md:w-5 w-4">
+                        <div className="md:w-6 w-5  my-auto">
                             <Image
-                                width={20}
-                                height={20}
+                                width={25}
+                                height={25}
                                 src="/img/social/linkedin.svg"
                                 objectFit="contain"
                                 className="cursor-pointer"
@@ -53,10 +53,10 @@ function Footer() {
                                 }}
                             />
                         </div>
-                        <div className="lg:w-6 md:w-5 w-4">
+                        <div className="md:w-6 w-5 my-auto">
                             <Image
-                                width={20}
-                                height={20}
+                                width={25}
+                                height={25}
                                 src="/img/social/github.svg"
                                 objectFit="contain"
                                 className="cursor-pointer"
@@ -64,24 +64,11 @@ function Footer() {
                                 onClick={() => router.push("https://github.com/pinqua")}
                             />
                         </div>
-                        <div className="lg:w-6 md:w-5 w-4">
-                            <Image
-                                width={20}
-                                height={20}
-                                src="/img/social/instagram.svg"
-                                objectFit="contain"
-                                className="cursor-pointer"
-                                alt="instagram"
-                                onClick={() => {
-                                    router.push("https://www.instagram.com/piyush__sati/");
-                                }}
-                            />
-                        </div>
                     </div>
                 </div>
                 <p className="mt-6 text-gray-200 text-center">
                     Made with &nbsp;💗 🔥&nbsp; by
-          <span className="text-white hover:underline ml-2">
+                    <span className="text-white hover:underline ml-2">
                         <Link href="https://itspiyushsati.netlify.app">Piyush Sati</Link>
                     </span>
                 </p>

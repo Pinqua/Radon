@@ -42,6 +42,9 @@
     color: #0a81ab;
   }
 }
+* {
+  -webkit-tap-highlight-color: transparent;
+}
 
 html,
 body {

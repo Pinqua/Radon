@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }) {
         <Provider store={store}>
           <Layout>
             <Component {...pageProps} />
-            <ToastContainer />
+            <ToastContainer limit={4} />
           </Layout>
         </Provider>
       </SWRConfig>
