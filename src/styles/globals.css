@@ -87,9 +87,11 @@ body {
   -webkit-backdrop-filter: blur(6px);
 }
 
-.layout,
-.sideBarMenu {
+.layout {
   min-width: 320px;
+}
+.sideBarMenu {
+  min-width: 250px;
 }
 
 /* Works on Firefox */

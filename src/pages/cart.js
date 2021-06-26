@@ -83,7 +83,7 @@ function Cart() {
               </div>
             </div>
           ) : (
-            <div className="flex items-center justify-center w-full  px-6 sm:py-20 py-10">
+            <div className="flex items-center justify-center w-full  px-6 lg:py-20 sm:py-10 py-4">
               <div className="text-center md:max-w-none mx-auto max-w-xs">
                 <Image
                   src="/img/empty_cart.svg"
@@ -92,7 +92,7 @@ function Cart() {
                   height={350}
                   objectFit="contain"
                 />
-                <h3 className="lg:text-3xl text-2xl    font-medium mt-4">
+                <h3 className="lg:text-3xl text-2xl   font-medium mt-4">
                   Your Cart is Empty
                 </h3>
               </div>

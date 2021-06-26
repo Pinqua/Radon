@@ -1,8 +1,21 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 function Footer() {
+    const router = useRouter();
+    const gmailHandler = () => {
+        window.open(
+            "mailto:" +
+            "piyushsati311999@gmail.com" +
+            "?subject=" +
+            " " +
+            "&body=" +
+            " ",
+            "_self"
+        );
+    };
     return (
         <div className="bg-gray-800 py-8 px-6 text-gray-200  lg:text-base text-sm">
             <div className="max-w-screen-xl w-full mx-auto">
@@ -20,22 +33,35 @@ function Footer() {
                             <Image
                                 width={20}
                                 height={20}
-                                src="/img/social/gmail.svg"
+                                src="/img/social/email.svg"
                                 objectFit="contain"
                                 className="cursor-pointer"
-                                alt="gmail"
-                                onClick={() => { }}
+                                alt="email"
+                                onClick={gmailHandler}
                             />
                         </div>
                         <div className="lg:w-6 md:w-5 w-4">
                             <Image
                                 width={20}
                                 height={20}
-                                src="/img/social/facebook.svg"
+                                src="/img/social/linkedin.svg"
                                 objectFit="contain"
                                 className="cursor-pointer"
-                                alt="facebook"
-                                onClick={() => { }}
+                                alt="linkedin"
+                                onClick={() => {
+                                    router.push("https://www.linkedin.com/in/piyush-sati");
+                                }}
+                            />
+                        </div>
+                        <div className="lg:w-6 md:w-5 w-4">
+                            <Image
+                                width={20}
+                                height={20}
+                                src="/img/social/github.svg"
+                                objectFit="contain"
+                                className="cursor-pointer"
+                                alt="github"
+                                onClick={() => router.push("https://github.com/pinqua")}
                             />
                         </div>
                         <div className="lg:w-6 md:w-5 w-4">
@@ -46,25 +72,16 @@ function Footer() {
                                 objectFit="contain"
                                 className="cursor-pointer"
                                 alt="instagram"
-                                onClick={() => { }}
-                            />
-                        </div>
-                        <div className="lg:w-6 md:w-5 w-4">
-                            <Image
-                                width={20}
-                                height={20}
-                                src="/img/social/twitter.svg"
-                                objectFit="contain"
-                                className="cursor-pointer"
-                                alt="twitter"
-                                onClick={() => { }}
+                                onClick={() => {
+                                    router.push("https://www.instagram.com/piyush__sati/");
+                                }}
                             />
                         </div>
                     </div>
                 </div>
                 <p className="mt-6 text-gray-200 text-center">
                     Made with &nbsp;💗 🔥&nbsp; by
-                    <span className="text-white hover:underline ml-2">
+          <span className="text-white hover:underline ml-2">
                         <Link href="https://itspiyushsati.netlify.app">Piyush Sati</Link>
                     </span>
                 </p>
