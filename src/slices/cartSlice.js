@@ -31,18 +31,18 @@ export const cartSlice = createSlice({
       //Toast to indicate item added to cart
       toast.success(
         <div className="font-Poppins">
-          <span className="font-semibold">Added to cart</span>
+          <span className="font-bold">Added to cart</span>
           <br />
-          <span className="text-sm">
-            {action.payload.title.slice(0, 32)}
-            {action.payload.title.length > 32 ? "…" : ""}
+          <span className="text-sm font-medium">
+            {action.payload.title.slice(0, 60)}
+            {action.payload.title.length > 60 ? "…" : ""}
           </span>
         </div>,
 
         {
           position: "top-right",
           autoClose: 2000,
-          style: { background: "linear-gradient(to bottom,#10B981,#059669)" },
+          style: { background: "linear-gradient(to bottom,#10B981,#047857)" },
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: false,

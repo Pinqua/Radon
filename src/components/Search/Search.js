@@ -48,8 +48,8 @@ function Search() {
         const fuse = new Fuse(products ? products : [], options);
         setSearchResults(fuse.search(term));
         /*setSearchResults(
-                      products?.filter((product) => product.title.toLowerCase().includes(term))
-                        );*/
+                              products?.filter((product) => product.title.toLowerCase().includes(term))
+                                );*/
         setLoading(false);
     };
 
@@ -72,7 +72,7 @@ function Search() {
             />
 
             {searchTerm ? (
-                <div className="absolute w-full h-auto max-h-96 top-11 rounded-md bg-gray-100 overflow-y-auto shadow-md hideScrollBar">
+                <div className="absolute w-full h-auto sm:max-h-96 max-h-80 top-11 rounded-md bg-gray-100 overflow-y-auto shadow-md hideScrollBar">
                     {!isLoading || !loading ? (
                         searchResults?.length ? (
                             searchResults.map(({ item: { _id, title, image } }, i) => (
