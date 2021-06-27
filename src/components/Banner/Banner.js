@@ -39,7 +39,7 @@ function Banner() {
           <Fade right>
             <Image
               src="/img/hero.svg"
-              alt="Web Shopping"
+              alt=""
               width={600}
               height={600}
               objectFit="contain"

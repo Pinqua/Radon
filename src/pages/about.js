@@ -23,6 +23,7 @@ function About() {
                     src="/img/programming.svg"
                     width={400}
                     height={400}
+                    alt=""
                     objectFit="contain"
                   />
                 </div>

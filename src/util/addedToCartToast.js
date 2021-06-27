@@ -11,6 +11,7 @@ const addedToCartToast = (image, title) => {
           src={image}
           width={40}
           height={40}
+          alt=""
           objectFit="contain"
           className="min-w-max"
         />

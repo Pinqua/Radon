@@ -87,7 +87,7 @@ function Cart() {
               <div className="text-center md:max-w-none sm:w-auto mx-auto max-w-xs w-4/5">
                 <Image
                   src="/img/empty_cart.svg"
-                  alt="Empty Cart"
+                  alt=""
                   width={350}
                   height={350}
                   objectFit="contain"

@@ -27,6 +27,7 @@ function Product({ _id, title, price, description, category, image }) {
           src={image}
           height={200}
           width={200}
+          alt="Product Image"
           objectFit="contain"
           className="cursor-pointer"
           onClick={() => router.push(`/product-details/${_id}`)}

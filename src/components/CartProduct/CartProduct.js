@@ -60,6 +60,7 @@ function CartProduct({
             height={150}
             objectFit="contain"
             className="cursor-pointer"
+            alt="Product Image"
             onClick={() => router.push(`/product-details/${_id}`)}
           />
         </div>

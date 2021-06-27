@@ -63,6 +63,7 @@ function Orders() {
                       src="/img/empty.svg"
                       width={300}
                       height={300}
+                      alt=""
                       objectFit="contain"
                     />
                   </div>
@@ -89,6 +90,7 @@ function Orders() {
                     src="/img/authentication.svg"
                     width={450}
                     height={450}
+                    alt=""
                   />
                 </div>
               </div>

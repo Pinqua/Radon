@@ -28,6 +28,7 @@ function OrderItem({ item }) {
                     src={item?.image}
                     width={120}
                     height={120}
+                    alt="Item Image"
                     objectFit="contain"
                     className="cursor-pointer"
                     onClick={() => {

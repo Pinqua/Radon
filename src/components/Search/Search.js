@@ -48,8 +48,8 @@ function Search() {
         const fuse = new Fuse(products ? products : [], options);
         setSearchResults(fuse.search(term));
         /*setSearchResults(
-                              products?.filter((product) => product.title.toLowerCase().includes(term))
-                                );*/
+                                          products?.filter((product) => product.title.toLowerCase().includes(term))
+                                            );*/
         setLoading(false);
     };
 
@@ -93,6 +93,7 @@ function Search() {
                                                 src={image}
                                                 height={40}
                                                 width={40}
+                                                alt=""
                                                 objectFit="contain"
                                             />
                                         </div>
