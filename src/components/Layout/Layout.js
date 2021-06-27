@@ -27,7 +27,7 @@ function Layout({ children }) {
             <Head>
                 <meta charSet='utf-8' />
                 <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
-                <meta name='viewport' content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0' />
+                <meta name='viewport' content='width=device-width,initial-scale=1.0,minimum-scale=1.0' />
                 <title>Radon</title>
                 <meta name="description" content="E-commerce website build with 💗 🔥 by Piyush Sati" />
                 <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon.png" />
