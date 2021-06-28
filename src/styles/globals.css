@@ -24,24 +24,6 @@
   }
 }
 
-/* Text color change animation */
-@-webkit-keyframes colorChangeAnimation {
-  0% {
-    color: #0c4271;
-  }
-  100% {
-    color: #0a81ab;
-  }
-}
-
-@keyframes colorChangeAnimation {
-  0% {
-    color: #0c4271;
-  }
-  100% {
-    color: #0a81ab;
-  }
-}
 * {
   -webkit-tap-highlight-color: transparent;
 }
@@ -58,13 +40,6 @@ body {
 .heightFix {
   min-height: calc(100vh - 150px);
   height: 100%;
-}
-
-.clr_change_animation {
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  -webkit-animation: colorChangeAnimation 2s infinite;
-  animation: colorChangeAnimation 2s infinite;
 }
 
 .loader svg {

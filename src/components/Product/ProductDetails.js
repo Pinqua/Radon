@@ -45,11 +45,11 @@ function ProductDetails({ _id, title, price, description, category, image }) {
   return (
     <div className="heightFix px-6 lg:py-32 md:py-28 py-12 pb-20">
       <div className="max-w-screen-xl flex items-center mx-auto">
-        <div className="flex md:flex-row flex-col md:justify-between w-full md:gap-4 gap-8">
+        <div className="flex md:flex-row flex-col md:justify-between w-full md:gap-4 gap-8 overflow-hidden p-0.5">
           {router.isFallback ? (
             <Skeleton width={400} height={400} />
           ) : (
-            <Bounce bottom>
+            <Bounce top>
               <div className="mx-auto">
                 <Image
                   src={image}
@@ -65,7 +65,7 @@ function ProductDetails({ _id, title, price, description, category, image }) {
             {router.isFallback ? (
               <Skeleton count={12} />
             ) : (
-              <Bounce bottom>
+              <Bounce top>
                 <h3 className="font-bold xl:text-4xl  lg:text-3xl text-2xl mb-2">
                   {title}
                 </h3>
