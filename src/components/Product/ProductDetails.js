@@ -14,12 +14,30 @@ function ProductDetails({ _id, title, price, description, category, image }) {
   const dispatch = useDispatch();
   const addItemToCart = () =>
     dispatch(
-      addToCart({ _id, title, price, description, category, image, qty: 1 })
+      addToCart({
+        _id,
+        title,
+        price,
+        description,
+        category,
+        image,
+        qty: 1,
+        toast: true,
+      })
     );
 
   const buyNow = () => {
     dispatch(
-      addToCart({ _id, title, price, description, category, image, qty: 1 })
+      addToCart({
+        _id,
+        title,
+        price,
+        description,
+        category,
+        image,
+        qty: 1,
+        toast: false,
+      })
     );
     router.push("/cart");
   };

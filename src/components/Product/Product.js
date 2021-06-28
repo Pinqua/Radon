@@ -13,7 +13,16 @@ function Product({ _id, title, price, description, category, image }) {
   const addItemToCart = () => {
     //Sending the product as an action to the REDUX store... the cart slice
     dispatch(
-      addToCart({ _id, title, price, description, category, image, qty: 1 })
+      addToCart({
+        _id,
+        title,
+        price,
+        description,
+        category,
+        image,
+        qty: 1,
+        toast: true,
+      })
     );
   };
 

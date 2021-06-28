@@ -26,10 +26,14 @@ export const cartSlice = createSlice({
         };
         state.items = newCart;
       } else {
-        state.items = [...state.items, action.payload];
+        let item = { ...action.payload };
+        delete item.toast;
+        state.items = [...state.items,item];
       }
       //Toast to indicate item added to cart
-      addedToCartToast(action.payload.image, action.payload.title);
+      if (action.payload.toast) {
+        addedToCartToast(action.payload.image, action.payload.title);
+      }
     },
     //Update the quantity of item in cart
     updateQty: (state, action) => {
