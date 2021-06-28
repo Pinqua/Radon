@@ -21,7 +21,7 @@ function Profile() {
             Profile
           </h3>
           <div className="sm:space-y-4 space-y-3 font-medium overflow-hidden sm:text-base text-sm">
-            <Fade left>
+            <Fade top>
               <img
                 src={session?.user?.image || "/img/profile_pic.svg"}
                 loading="lazy"

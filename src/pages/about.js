@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
-import Fade from "react-reveal/Fade";
+import Bounce from "react-reveal/Bounce";
 
 function About() {
   return (
@@ -17,7 +17,7 @@ function About() {
               About
             </h3>
             <div className="flex md:gap-8 md:flex-row flex-col w-full items-center overflow-hidden">
-              <Fade left>
+              <Bounce bottom>
                 <div className="mx-auto md:w-3/4 md:max-w-lg  max-w-xs">
                   <Image
                     src="/img/programming.svg"
@@ -27,8 +27,8 @@ function About() {
                     objectFit="contain"
                   />
                 </div>
-              </Fade>
-              <Fade right>
+              </Bounce>
+              <Bounce bottom>
                 <div className="flex-grow ml-auto">
                   <p>
                     This a E-commerce website build using
@@ -59,7 +59,7 @@ function About() {
                     </span>
                   </p>
                 </div>
-              </Fade>
+              </Bounce>
             </div>
           </div>
         </div>
