@@ -49,7 +49,7 @@ function ProductDetails({ _id, title, price, description, category, image }) {
           {router.isFallback ? (
             <Skeleton width={400} height={400} />
           ) : (
-            <Bounce top>
+            <Bounce bottom>
               <div className="mx-auto">
                 <Image
                   src={image}
@@ -65,7 +65,7 @@ function ProductDetails({ _id, title, price, description, category, image }) {
             {router.isFallback ? (
               <Skeleton count={12} />
             ) : (
-              <Bounce top>
+              <Bounce bottom>
                 <h3 className="font-bold xl:text-4xl  lg:text-3xl text-2xl mb-2">
                   {title}
                 </h3>
