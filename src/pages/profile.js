@@ -1,14 +1,9 @@
 import { useSession } from "next-auth/client";
-import Custom404 from "./404";
 import Head from "next/head";
 import Fade from "react-reveal/Fade";
 
 function Profile() {
-  const [session, loading] = useSession();
-
-  if (!loading && !session) {
-    return <Custom404 />;
-  }
+  const [session] = useSession();
 
   return (
     <>
@@ -53,5 +48,7 @@ function Profile() {
     </>
   );
 }
+
+Profile.auth = true;
 
 export default Profile;

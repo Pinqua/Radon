@@ -41,7 +41,7 @@ function Product({ _id, title, price, description, category, image }) {
           className="cursor-pointer"
           onClick={() => router.push(`/product-details/${_id}`)}
         />
-        <h4 className="my-3 link font-medium">
+        <h4 className="my-3 link font-medium capitalize">
           <Link href={`/product-details/${_id}`}>{title}</Link>
         </h4>
         <p className="text-xs  mb-2 line-clamp-2 text-gray-500 link">

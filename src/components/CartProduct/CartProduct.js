@@ -67,7 +67,7 @@ function CartProduct({
 
         {/* Middle */}
         <div className="col-span-3 sm:p-4 mt-2 mb-6 sm:my-0">
-          <h4 className="mb-3 link lg:text-xl md:text-lg text-base  font-medium">
+          <h4 className="mb-3 link lg:text-xl md:text-lg text-base capitalize font-medium">
             <Link href={`/product-details/${_id}`}>{title}</Link>
           </h4>
           <p className="lg:text-sm text-xs my-2  mb-4 line-clamp-3 link text-gray-500">

@@ -18,7 +18,7 @@ const addedToCartToast = (image, title) => {
       </div>
       <div className="w-full">
         <h3 className="font-bold">Added to cart</h3>
-        <p className="text-sm mb-2">
+        <p className="text-sm mb-2 capitalize">
           {title.slice(0, 22)}
           {title.length > 22 ? "…" : ""}
         </p>
@@ -34,7 +34,7 @@ const addedToCartToast = (image, title) => {
       position: "top-right",
       autoClose: 6000,
       style: {
-        background: "white",
+        backgroundColor: "white",
         color: "#1f2937",
         fontFamily: "Poppins, sans-serif",
         height: "auto",
@@ -42,7 +42,7 @@ const addedToCartToast = (image, title) => {
       hideProgressBar: false,
       pauseOnHover: false,
       draggable: true,
-      draggablePercent: 50,
+      draggablePercent: 25,
     }
   );
 };

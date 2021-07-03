@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 function Search() {
     const [searchTerm, setSearchTerm] = useState("");
     const [searchResults, setSearchResults] = useState([]);
-    const { products, isLoading, isError } = getProducts();
+    const { products, isLoading, error } = getProducts();
     const [loading, setLoading] = useState(true);
     const searchRef = useRef(null);
     const router = useRouter();
@@ -48,13 +48,13 @@ function Search() {
         const fuse = new Fuse(products ? products : [], options);
         setSearchResults(fuse.search(term));
         /*setSearchResults(
-                 products?.filter((product) => product.title.toLowerCase().includes(term))
-            );*/
+                     products?.filter((product) => product.title.toLowerCase().includes(term))
+                );*/
         setLoading(false);
     };
 
-    if (isError) {
-        alert(error);
+    if (error) {
+        // alert(error);
         console.error(error);
     }
 
@@ -64,7 +64,7 @@ function Search() {
                 <SearchIcon className="w-4 text-gray-600" />
             </div>
             <input
-                className="p-2 pl-10 h-full flex-grow flex-shrink outline-none cursor-pointer sm:text-base text-sm rounded-lg bg-gray-200 hover:shadow-md focus:shadow-md"
+                className="p-2 pl-10 h-full flex-grow flex-shrink outline-none cursor-pointer sm:text-base text-sm rounded-lg bg-gray-200"
                 type="text"
                 value={searchTerm}
                 placeholder="Search a product"
@@ -76,7 +76,7 @@ function Search() {
                     {!isLoading || !loading ? (
                         searchResults?.length ? (
                             searchResults.map(({ item: { _id, title, image } }, i) => (
-                                <Fade bottom key={`search-result${i}${_id}`}>
+                                <Fade bottom key={`search-result-${i}${_id}`}>
                                     <div
                                         onClick={() => {
                                             closeSearch();
@@ -87,7 +87,9 @@ function Search() {
                                                 : ""
                                             } bg-gray-50 hover:bg-gray-100`}
                                     >
-                                        <h5 className="text-sm text-gray-700 pr-4">{title}</h5>
+                                        <h5 className="text-sm text-gray-700 pr-4 capitalize">
+                                            {title}
+                                        </h5>
                                         <div className="min-w-max">
                                             <Image
                                                 src={image}

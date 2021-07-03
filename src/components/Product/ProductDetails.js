@@ -7,7 +7,6 @@ import { useRouter } from "next/router";
 import Skeleton from "react-loading-skeleton";
 import { ShoppingCartIcon } from "@heroicons/react/solid";
 import { LightningBoltIcon } from "@heroicons/react/solid";
-import Bounce from "react-reveal/Bounce";
 
 function ProductDetails({ _id, title, price, description, category, image }) {
   const router = useRouter();
@@ -45,28 +44,26 @@ function ProductDetails({ _id, title, price, description, category, image }) {
   return (
     <div className="heightFix px-6 lg:py-32 md:py-28 py-12 pb-20">
       <div className="max-w-screen-xl flex items-center mx-auto">
-        <div className="flex md:flex-row flex-col md:justify-between w-full md:gap-4 gap-8 overflow-hidden p-0.5">
+        <div className="flex md:flex-row flex-col md:justify-between w-full md:gap-4 gap-8">
           {router.isFallback ? (
             <Skeleton width={400} height={400} />
           ) : (
-            <Bounce bottom>
-              <div className="mx-auto">
-                <Image
-                  src={image}
-                  alt="Product Image"
-                  width={400}
-                  height={400}
-                  objectFit="contain"
-                />
-              </div>
-            </Bounce>
+            <div className="mx-auto">
+              <Image
+                src={image}
+                alt="Product Image"
+                width={400}
+                height={400}
+                objectFit="contain"
+              />
+            </div>
           )}
           <div className="flex-grow xl:max-w-2xl lg:max-w-xl  md:max-w-md">
             {router.isFallback ? (
               <Skeleton count={12} />
             ) : (
-              <Bounce bottom>
-                <h3 className="font-bold xl:text-4xl  lg:text-3xl text-2xl mb-2">
+              <>
+                <h3 className="font-bold xl:text-4xl  lg:text-3xl text-2xl mb-2 capitalize">
                   {title}
                 </h3>
                 <p className="text-blue-light capitalize mb-4 font-medium">
@@ -94,7 +91,7 @@ function ProductDetails({ _id, title, price, description, category, image }) {
                     <span className="ml-2">Buy Now</span>
                   </button>
                 </div>
-              </Bounce>
+              </>
             )}
           </div>
         </div>

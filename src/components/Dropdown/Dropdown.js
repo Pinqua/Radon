@@ -7,13 +7,20 @@ function Dropdown({ hideDropDown }) {
   const router = useRouter();
   Dropdown.handleClickOutside = hideDropDown;
   return (
-    <div className="w-32 font-medium bg-white text-sm rounded shadow overflow-hidden border border-gray-100">
+    <div className="font-medium w-36 bg-white text-sm rounded shadow overflow-hidden border border-gray-100">
+      <div
+        className="dropDownOption border-b border-gray-200"
+        onClick={() => router.push("/admin/dashboard")}
+      >
+        Dashboard
+      </div>
       <div
         className="dropDownOption border-b border-gray-200"
         onClick={() => router.push("/profile")}
       >
         Profile
       </div>
+
       <div
         className="dropDownOption border-b border-gray-200"
         onClick={() => router.push("/orders")}
@@ -29,8 +36,7 @@ function Dropdown({ hideDropDown }) {
       <div
         className="dropDownOption"
         onClick={() => {
-          router.replace("/");
-          signOut({ redirect: false });
+          signOut();
         }}
       >
         Logout

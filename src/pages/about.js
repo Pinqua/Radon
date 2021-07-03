@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
-import Bounce from "react-reveal/Bounce";
+import Fade from "react-reveal/Fade";
 
 function About() {
   return (
@@ -16,20 +16,18 @@ function About() {
             <h3 className="sm:text-2xl text-xl font-semibold border-b-2 border-gray-200 pb-4 text-gray-700">
               About
             </h3>
-            <div className="flex md:gap-8 md:flex-row flex-col w-full items-center overflow-hidden">
-              <Bounce bottom>
-                <div className="mx-auto md:w-3/4 md:max-w-lg  max-w-xs">
-                  <Image
-                    src="/img/programming.svg"
-                    width={400}
-                    height={400}
-                    alt=""
-                    objectFit="contain"
-                  />
-                </div>
-              </Bounce>
-              <Bounce bottom>
-                <div className="flex-grow ml-auto">
+            <div className="flex md:gap-8 md:flex-row flex-col w-full items-center">
+              <div className="mx-auto md:w-3/4 md:max-w-lg  max-w-xs">
+                <Image
+                  src="/img/programming.svg"
+                  width={400}
+                  height={400}
+                  alt=""
+                  objectFit="contain"
+                />
+              </div>
+              <div className="flex-grow ml-auto ">
+                <Fade bottom>
                   <p>
                     This a E-commerce website build using
                     <span className="link text-blue-light underline mx-1">
@@ -58,8 +56,8 @@ function About() {
                       piyushsati311999@gmail.com
                     </span>
                   </p>
-                </div>
-              </Bounce>
+                </Fade>
+              </div>
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import NextAuth from "next-auth";
 import Providers from "next-auth/providers";
+import { connectToDatabase } from "../../../util/mongodb";
 
 export default NextAuth({
   providers: [
@@ -9,6 +10,19 @@ export default NextAuth({
     }),
   ],
 
+  callbacks: {
+    async session(session, token) {
+      session.admin = false;
+      const { db } = await connectToDatabase();
+      const result = await db
+        .collection("admins")
+        .findOne({ user: session.user.email });
+      if (result) {
+        session.admin = true;
+      }
+      return session;
+    },
+  },
   // A database is optional, but required to persist accounts in a database
   database:
     "mongodb+srv://PiyushSati:X17yhHFbRtwpI7vN@cluster0.dv62p.mongodb.net/Radon",

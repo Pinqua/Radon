@@ -1,5 +1,4 @@
 import { connectToDatabase } from "../../util/mongodb";
-//import prods from "../../../products.json"
 
 export default async (req, res) => {
   try {
@@ -12,8 +11,3 @@ export default async (req, res) => {
     return res.status(500).json({ message: "Internal Server Error" });
   }
 };
-
-//await db.collection("products").deleteMany({})
-/*prods.forEach(async(itm)=>{
-        await db.collection("products").insertOne(itm)
-    })*/

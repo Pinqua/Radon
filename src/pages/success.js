@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import Custom404 from "./404";
 import Head from "next/head";
 
-function success() {
+function Success() {
   const router = useRouter();
   const [session, loading] = useSession();
 
@@ -42,4 +42,4 @@ function success() {
   );
 }
 
-export default success;
+export default Success;

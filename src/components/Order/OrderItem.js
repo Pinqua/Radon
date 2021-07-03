@@ -9,7 +9,7 @@ function OrderItem({ item }) {
     return (
         <div className="flex sm:flex-row flex-col-reverse my-4 text-sm text-gray-700 p-6 border border-gray-200 sm:justify-between gap-6">
             <div>
-                <span className="link font-semibold">
+                <span className="link font-semibold capitalize">
                     <Link href={`/product-details/${item?._id}`}>{item?.title}</Link>
                 </span>
                 <div className="mt-2">
@@ -23,7 +23,7 @@ function OrderItem({ item }) {
                     </p>
                 </div>
             </div>
-            <div className="sm:mx-0 sm:ml-6 min-w-max  mx-auto">
+            <div className="sm:mx-0 sm:ml-6 min-w-max my-auto mx-auto">
                 <Image
                     src={item?.image}
                     width={120}

@@ -9,9 +9,15 @@ export default async (req, res) => {
             const { db } = await connectToDatabase();
             let order;
             try {
-                order = await db
-                    .collection("orders")
-                    .findOne({ user: session.user.email, _id: ObjectId(req.query.id) });
+                if (session.admin) {
+                    order = await db
+                        .collection("orders")
+                        .findOne({ _id: ObjectId(req.query.id) });
+                } else {
+                    order = await db
+                        .collection("orders")
+                        .findOne({ user: session.user.email, _id: ObjectId(req.query.id) });
+                }
             } catch (err) {
                 console.error(err);
                 return res.status(400).json({ message: "Bad Request" });

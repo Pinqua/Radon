@@ -21,12 +21,12 @@ function MyApp({ Component, pageProps }) {
     <NextAuthProvider session={pageProps.session}>
       <SWRConfig
         value={{
-          refreshInterval: 4000,
+          refreshInterval: 1000,
           fetcher,
         }}
       >
         <Provider store={store}>
-          <Layout>
+          <Layout admin={Component.admin} auth={Component.auth}>
             <Component {...pageProps} />
             <ToastContainer limit={4} />
           </Layout>

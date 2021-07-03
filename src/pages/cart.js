@@ -48,7 +48,7 @@ function Cart() {
       <div className="bg-gray-100 py-10 md:px-6 heightFix">
         <main className="max-w-screen-xl mx-auto">
           {items?.length ? (
-            <div className="flex-grow my-6 shadow rounded-md">
+            <div className="my-6 shadow rounded-md">
               <div className="flex flex-col md:p-8  p-6  bg-white">
                 <h1 className="sm:text-2xl text-xl  font-semibold border-b-2 border-gray-200 pb-4 text-gray-700">
                   Shopping Cart
@@ -61,7 +61,7 @@ function Cart() {
                     </span>
                   </span>
                   <button
-                    className="button py-2 px-8 xs:px-10"
+                    className="button-red py-2 px-8 xs:px-10"
                     onClick={() => dispatch(emptyCart())}
                   >
                     Empty Cart
@@ -69,7 +69,7 @@ function Cart() {
                 </div>
                 {items.map((item, i) => (
                   <CartProduct
-                    key={`cart-product${item?._id}`}
+                    key={`cart-product-${item?._id}`}
                     _id={item?._id}
                     title={item?.title}
                     price={item?.price}

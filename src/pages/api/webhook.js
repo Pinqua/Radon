@@ -13,7 +13,12 @@ const fulfillOrder = async (session) => {
       .collection("temp")
       .findOne({ _id: ObjectId(JSON.parse(session.metadata.id)) });
     delete result._id;
+    const ord_status = { status: "Shipping soon", timestamp: new Date() };
     await db.collection("orders").insertOne({
+      order_status: {
+        current: ord_status,
+        info: [ord_status],
+      },
       ...result,
       ...session,
       timestamp: new Date(),

@@ -1,7 +1,8 @@
 import { useRouter } from "next/router";
 import React from "react";
-import OrderDetails from "../../components/Order/OrderDetails";
+import OrderDetails from "../../../components/Order/OrderDetails";
 import Head from "next/head";
+
 function orderDetails() {
   const router = useRouter();
   return (
@@ -9,10 +10,10 @@ function orderDetails() {
       <Head>
         <title>Radon | OrderDetails</title>
       </Head>
-      <OrderDetails id={router.query.id} />
+      <OrderDetails id={router.query.id} admin />
     </>
   );
 }
 
-orderDetails.auth = true;
+orderDetails.admin = true;
 export default orderDetails;
