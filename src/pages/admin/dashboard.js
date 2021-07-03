@@ -6,6 +6,7 @@ import Image from "next/image";
 import Order from "../../components/Order/Order";
 import { useSession } from "next-auth/client";
 import Head from "next/head";
+import { ArchiveIcon, PlusIcon, UsersIcon } from "@heroicons/react/outline";
 
 function Dashboard() {
   const [session, loading] = useSession();
@@ -28,18 +29,30 @@ function Dashboard() {
             <h1 className="sm:text-2xl text-xl  font-semibold border-b-2 border-gray-200 pb-4 text-gray-700">
               Dashboard
             </h1>
-            <div className="flex gap-4 sm:gap-6 lg:gap-8 xl:gap-10 text-blue-light font-medium flex-wrap sm:text-base text-sm">
+            <div className="flex gap-4 sm:gap-6 lg:gap-8  text-blue-light font-medium flex-wrap sm:text-base text-sm">
               <Link href="/admin/products">
-                <span className="link hover:underline">Products</span>
+                <div className="dashboard-link flex items-center gap-1">
+                  <ArchiveIcon className="w-4" />
+                  <span>Products</span>
+                </div>
               </Link>
               <Link href="/admin/users">
-                <span className="link hover:underline">Users</span>
+                <div className="dashboard-link flex items-center gap-1">
+                  <UsersIcon className="w-4" />
+                  <span>Users</span>
+                </div>
               </Link>
               <Link href="/admin/add-product">
-                <span className="link hover:underline">Add Product</span>
+                <div className="dashboard-link flex items-center gap-1">
+                  <PlusIcon className="w-4" />
+                  <span>Product</span>
+                </div>
               </Link>
               <Link href="/admin/add-category">
-                <span className="link hover:underline">Add Category</span>
+                <div className="dashboard-link flex items-center gap-1">
+                  <PlusIcon className="w-4" />
+                  <span>Category</span>
+                </div>
               </Link>
             </div>
             <div className="lg:mt-10 sm:mt-8 mt-6">
