@@ -98,6 +98,13 @@ function OrderDetails({ id, admin }) {
                     )}
                   </ul>
                 </div>
+                {order?.order_status?.current?.status === "cancelled" ? (
+                  <p className="my-2 text-xs xs:text-sm text-red-500">
+                    * Money will be refunded within 24hour
+                  </p>
+                ) : (
+                  <></>
+                )}
                 <p className="whitespace-nowrap font-semibold overflow-x-auto hideScrollBar">
                   ORDER ID -
                   <span className="text-green-500 font-medium ml-2">

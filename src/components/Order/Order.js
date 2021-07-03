@@ -90,6 +90,13 @@ function Order({ _id, id, amount_total, timestamp, items, status, admin }) {
           title="Click to view order details"
         >
           <div className="sm:p-6 p-4 bg-gray-100 sm:text-sm text-xs text-gray-600">
+            {status && status === "cancelled" ? (
+              <p className="mb-2 text-red-500">
+                * Money will be refunded within 24hour
+              </p>
+            ) : (
+              <></>
+            )}
             <p className="sm:absolute sm:top-2 sm:right-2 sm:w-56 lg:w-72 truncate text-xs whitespace-nowrap sm:mb-0 mb-2 font-medium">
               ORDER # <span className="text-green-500">{id}</span>
             </p>
