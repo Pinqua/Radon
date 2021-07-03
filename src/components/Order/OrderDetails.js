@@ -57,7 +57,7 @@ function OrderDetails({ id, admin }) {
             <>
               {admin && session?.admin ? (
                 <select
-                  className="border xs:text-sm text-xs p-2 rounded bg-blue-500 text-white outline-none"
+                  className="border xs:text-sm text-xs p-2 rounded bg-blue-500 text-white outline-none capitalize"
                   value={order?.order_status?.current?.status}
                   disabled={updating}
                   onChange={updateStatus}

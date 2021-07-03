@@ -62,15 +62,11 @@ function AddProduct(props) {
             />
             <select
               required
-              className="bg-gray-100 py-2 px-4 rounded-md outline-none border border-gray-200"
+              className="bg-gray-100 py-2 px-4 rounded-md outline-none border border-gray-200 capitalize"
               onChange={(e) => setCategory(e.target.value)}
             >
               {categories?.map((category) => (
-                <option
-                  value={category?.name}
-                  className="capitalize"
-                  key={`option-${category?._id}`}
-                >
+                <option value={category?.name} key={`option-${category?._id}`}>
                   {category?.name}
                 </option>
               ))}
