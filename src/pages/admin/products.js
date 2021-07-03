@@ -1,14 +1,10 @@
 import React, { useState } from "react";
 import { connectToDatabase } from "../../util/mongodb";
-import axios from "axios";
-import NormalToast from "../../util/Toast/NormalToast";
 import getProducts from "../../util/getProducts";
-import { useRouter } from "next/router";
 import Head from "next/head";
 import ProductInfo from "../../components/Product/ProductInfo";
 
 function Products(props) {
-  const router = useRouter();
   const [searchTerm, setSearchTerm] = useState("");
   const { products, error } = getProducts(props?.products);
   const [searchResult, setSearchResult] = useState(products);
@@ -40,19 +36,10 @@ function Products(props) {
     setSearchResult(result);
   };
 
-  const deleteProduct = (_id) => {
-    axios
-      .post("/api/admin/delete-product", { _id })
-      .then(() => {
-        NormalToast("Product deleted");
-        setSearchResult((products) =>
-          products.filter((product) => product._id !== _id)
-        );
-      })
-      .catch((err) => {
-        NormalToast("Something went wrong", true);
-        console.err(err);
-      });
+  const removeFromSearchResults = (_id) => {
+    setSearchResult((products) =>
+      products.filter((product) => product._id !== _id)
+    );
   };
 
   return (
@@ -86,6 +73,7 @@ function Products(props) {
                   image={image}
                   border={i + 1 !== products?.length}
                   key={`product-${_id}`}
+                  removeFromSearchResults={removeFromSearchResults}
                 />
               )
             )}

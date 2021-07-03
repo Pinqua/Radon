@@ -19,7 +19,7 @@ export default async (req, res) => {
                         .collection("products")
                         .replaceOne(
                             { _id: ObjectId(_id) },
-                            { title, category, description, price, image }
+                            { title, category, description, price: parseInt(price), image }
                         );
                     return res
                         .status(200)

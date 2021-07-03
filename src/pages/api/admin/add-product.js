@@ -13,7 +13,8 @@ export default async (req, res) => {
                 if (!admin) {
                     return res.status(401).json({ message: "Unauthorized" });
                 } else {
-                    await db.collection("products").insertOne(req.body);
+                    const product = { ...req.body, price: parseInt(req.body.price) };
+                    await db.collection("products").insertOne(product);
                     return res
                         .status(200)
                         .json({ message: "Product added successfully" });
