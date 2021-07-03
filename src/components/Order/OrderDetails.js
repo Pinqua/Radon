@@ -87,7 +87,7 @@ function OrderDetails({ id, admin }) {
                           className="flex sm:items-center sm:justify-between sm:flex-row flex-col"
                           key={`orderStatus-${i}`}
                         >
-                          <span className="sm:text-sm text-xs font-medium">
+                          <span className="sm:text-sm text-xs font-medium capitalize">
                             {status}
                           </span>
                           <span className="sm:text-sm text-xs">
