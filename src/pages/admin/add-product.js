@@ -11,10 +11,10 @@ function AddProduct(props) {
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
   const [category, setCategory] = useState("");
-  const { categories, error } = getCategories(props.categories);
+  const { categories, error } = getCategories(props?.categories);
 
   if (error) {
-    console.log(error);
+    console.error(error);
   }
 
   const formHandler = (e) => {
@@ -69,7 +69,7 @@ function AddProduct(props) {
                 <option
                   value={category?.name}
                   className="capitalize"
-                  key={`option-${category._id}`}
+                  key={`option-${category?._id}`}
                 >
                   {category?.name}
                 </option>

@@ -41,10 +41,10 @@ function Users() {
                   </thead>
                   <tbody className="sm:text-sm text-xs">
                     {users?.map((user) => (
-                      <tr key={`user-${user._id}`}>
+                      <tr key={`user-${user?._id}`}>
                         <td className="table_col_img">
                           <img
-                            src={user.image || "/img/profile_pic.svg"}
+                            src={user?.image || "/img/profile_pic.svg"}
                             className="object-contain w-10 rounded-sm py-2"
                             alt="pic"
                           />

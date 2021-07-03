@@ -9,7 +9,7 @@ function orderDetails() {
       <Head>
         <title>Radon | OrderDetails</title>
       </Head>
-      <OrderDetails id={router.query.id} />
+      <OrderDetails id={router.query?.id} />
     </>
   );
 }

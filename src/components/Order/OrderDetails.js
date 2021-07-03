@@ -15,7 +15,6 @@ function OrderDetails({ id, admin }) {
   );
 
   if (error) {
-    // alert(error);
     console.error(error);
   }
 
@@ -75,7 +74,7 @@ function OrderDetails({ id, admin }) {
                 <div
                   className={`my-2 p-4 border-2 ${order?.order_status?.current?.status === "cancelled"
                       ? "text-red-500 border-red-500 bg-red-100"
-                      : order?.order_status.current.status === "delivered"
+                      : order?.order_status?.current.status === "delivered"
                         ? "text-green-500 border-green-500 bg-green-100"
                         : "text-blue-500 border-blue-500 bg-blue-100"
                     }  rounded-md`}

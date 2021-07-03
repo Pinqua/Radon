@@ -39,7 +39,7 @@ function HeaderMobile() {
           >
             <ShoppingCartIcon className="xl:w-10 w-9 link" />
             <div className="absolute -top-2 -right-1 rounded-full text-white bg-blue-light p-1 flex items-center justify-center text-xs font-extrabold">
-              {items.length}
+              {items?.length}
             </div>
           </div>
         </div>

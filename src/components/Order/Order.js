@@ -82,7 +82,7 @@ function Order({ _id, id, amount_total, timestamp, items, status, admin }) {
         )}
       </div>
       <Link
-        href={`/${admin && session.admin ? "admin/" : ""}order-details/${_id}`}
+        href={`/${admin && session?.admin ? "admin/" : ""}order-details/${_id}`}
       >
         <div
           className={`relative border rounded-md rounded-tl-none cursor-pointer hover:shadow-sm bg-white overflow-hidden ${status && status === "cancelled" ? "opacity-70" : ""

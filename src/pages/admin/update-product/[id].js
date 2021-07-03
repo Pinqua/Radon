@@ -14,10 +14,10 @@ function UpdateProduct(props) {
   const [image, setImage] = useState(props?.product?.image);
   const [category, setCategory] = useState(props?.product?.category);
   const router = useRouter();
-  const { categories, error } = getCategories(props.categories);
+  const { categories, error } = getCategories(props?.categories);
 
   if (error) {
-    console.log(error);
+    console.error(error);
   }
 
   const formHandler = (e) => {
@@ -33,7 +33,6 @@ function UpdateProduct(props) {
       })
       .then((res) => {
         NormalToast("Updated successfully");
-        console.log(e.target);
       })
       .catch((err) => {
         NormalToast("Something went wrong", err);
@@ -69,7 +68,7 @@ function UpdateProduct(props) {
                 <option
                   value={category?.name}
                   className="capitalize"
-                  key={`option-${category._id}`}
+                  key={`option-${category?._id}`}
                 >
                   {category?.name}
                 </option>

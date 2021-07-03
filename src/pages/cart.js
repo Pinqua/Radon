@@ -77,7 +77,7 @@ function Cart() {
                     category={item?.category}
                     image={item?.image}
                     qty={item?.qty}
-                    border={i !== items.length - 1}
+                    border={i !== items?.length - 1}
                   />
                 ))}
               </div>

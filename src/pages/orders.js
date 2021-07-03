@@ -12,8 +12,6 @@ function Orders() {
   );
 
   if (error) {
-    orders = [];
-    //alert(error);
     console.error(error);
   }
 

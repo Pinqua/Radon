@@ -47,14 +47,10 @@ function Search() {
         const Fuse = (await import("fuse.js")).default;
         const fuse = new Fuse(products ? products : [], options);
         setSearchResults(fuse.search(term));
-        /*setSearchResults(
-                     products?.filter((product) => product.title.toLowerCase().includes(term))
-                );*/
         setLoading(false);
     };
 
     if (error) {
-        // alert(error);
         console.error(error);
     }
 

@@ -4,9 +4,11 @@ import Head from "next/head";
 
 function Admin() {
   const router = useRouter();
+
   useEffect(() => {
     router.replace("/admin/dashboard");
   }, [router]);
+
   return (
     <>
       <Head>

@@ -8,8 +8,8 @@ import getProducts from "../util/getProducts";
 import { connectToDatabase } from "../util/mongodb";
 
 export default function Home(props) {
-  const { products, error } = getProducts(props.products);
-  const { categories, error: err } = getCategories(props.categories);
+  const { products, error } = getProducts(props?.products);
+  const { categories, error: err } = getCategories(props?.categories);
   const dispatch = useDispatch();
 
   useEffect(() => {

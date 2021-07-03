@@ -11,14 +11,14 @@ import Head from "next/head";
 function Products(props) {
   const router = useRouter();
   const [searchTerm, setSearchTerm] = useState("");
-  const { products, error } = getProducts(props.products);
+  const { products, error } = getProducts(props?.products);
   const [searchResult, setSearchResult] = useState(products);
   const options = {
     keys: ["title", "description", "category"],
   };
 
   if (error) {
-    console.log(error);
+    console.error(error);
   }
 
   const searchProduct = async (e) => {
@@ -79,7 +79,7 @@ function Products(props) {
             {(searchTerm ? searchResult : products)?.map(
               ({ _id, title, price, description, category, image }, i) => (
                 <div
-                  className={`flex sm:flex-row flex-col-reverse w-full my-4 text-sm text-gray-700 py-6 ${i !== products.length ? "border-b border-gray-200" : ""
+                  className={`flex sm:flex-row flex-col-reverse w-full my-4 text-sm text-gray-700 py-6 ${i !== products?.length ? "border-b border-gray-200" : ""
                     } sm:justify-between gap-6`}
                   key={`product-${_id}`}
                 >

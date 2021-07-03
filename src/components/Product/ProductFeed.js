@@ -17,7 +17,7 @@ function ProductFeed({ products, categories }) {
 
   const filterProducts = (category) => {
     setFilteredProducts(
-      products.filter((product) => product.category === category)
+      products.filter((product) => product?.category === category)
     );
   };
 

@@ -26,7 +26,7 @@ function MyApp({ Component, pageProps }) {
         }}
       >
         <Provider store={store}>
-          <Layout admin={Component.admin} auth={Component.auth}>
+          <Layout admin={Component?.admin} auth={Component?.auth}>
             <Component {...pageProps} />
             <ToastContainer limit={4} />
           </Layout>

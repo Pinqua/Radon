@@ -61,7 +61,7 @@ function Dashboard() {
                 )}
               </h2>
               {orders ? (
-                orders.length ? (
+                orders?.length ? (
                   <div className="mt-5 space-y-6">
                     {orders.map(
                       ({
@@ -79,7 +79,7 @@ function Dashboard() {
                           amount_total={amount_total / 100}
                           timestamp={timestamp}
                           items={items}
-                          status={order_status.current.status}
+                          status={order_status?.current?.status}
                           admin
                         />
                       )
