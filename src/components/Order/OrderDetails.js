@@ -84,7 +84,7 @@ function OrderDetails({ id, admin }) {
                     {order?.order_status?.info?.map(
                       ({ status, timestamp }, i) => (
                         <li
-                          className="flex sm:items-center sm:justify-between sm:flex-row flex-col"
+                          className="flex sm:items-center sm:justify-between sm:flex-row flex-col gap-1"
                           key={`orderStatus-${i}`}
                         >
                           <span className="sm:text-sm text-xs font-medium">
