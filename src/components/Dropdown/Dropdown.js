@@ -1,19 +1,22 @@
-import { signOut } from "next-auth/client";
+import { signOut, useSession } from "next-auth/client";
 import { useRouter } from "next/router";
 import React from "react";
 import onClickOutside from "react-onclickoutside";
 
 function Dropdown({ hideDropDown }) {
+  const [session] = useSession();
   const router = useRouter();
   Dropdown.handleClickOutside = hideDropDown;
   return (
     <div className="font-medium w-36 bg-white text-sm rounded shadow overflow-hidden border border-gray-100">
-      <div
-        className="dropDownOption border-b border-gray-200"
-        onClick={() => router.push("/admin/dashboard")}
-      >
-        Dashboard
-      </div>
+      {session?.admin && (
+        <div
+          className="dropDownOption border-b border-gray-200"
+          onClick={() => router.push("/admin/dashboard")}
+        >
+          Dashboard
+        </div>
+      )}
       <div
         className="dropDownOption border-b border-gray-200"
         onClick={() => router.push("/profile")}

@@ -68,14 +68,16 @@ function SideBarMenu({ closeSideBar }) {
             <HomeIcon className="w-5 mr-6" /> Home
           </span>
         </div>
-        <div>
-          <span
-            onClick={() => sideBarClickHandler("/admin/dashboard")}
-            className="link inline-flex"
-          >
-            <TableIcon className="w-5 mr-6" /> Dashboard
-          </span>
-        </div>
+        {session?.admin && (
+          <div>
+            <span
+              onClick={() => sideBarClickHandler("/admin/dashboard")}
+              className="link inline-flex"
+            >
+              <TableIcon className="w-5 mr-6" /> Dashboard
+            </span>
+          </div>
+        )}
         {session && (
           <div>
             <span
