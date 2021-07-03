@@ -92,7 +92,7 @@ function Order({ _id, id, amount_total, timestamp, items, status, admin }) {
           <div className="sm:p-6 p-4 bg-gray-100 sm:text-sm text-xs text-gray-600">
             {status && status === "cancelled" ? (
               <p className="mb-2 text-red-500">
-                * Money will be refunded within 24hour
+                * Money will be refunded within 24 hour
               </p>
             ) : (
               <></>

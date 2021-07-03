@@ -100,7 +100,7 @@ function OrderDetails({ id, admin }) {
                 </div>
                 {order?.order_status?.current?.status === "cancelled" ? (
                   <p className="my-2 text-xs xs:text-sm text-red-500">
-                    * Money will be refunded within 24hour
+                    * Money will be refunded within 24 hour
                   </p>
                 ) : (
                   <></>
