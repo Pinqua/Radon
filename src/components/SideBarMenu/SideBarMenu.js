@@ -68,7 +68,7 @@ function SideBarMenu({ closeSideBar }) {
             <HomeIcon className="w-5 mr-6" /> Home
           </span>
         </div>
-        {session?.admin && (
+        {session && session?.admin && (
           <div>
             <span
               onClick={() => sideBarClickHandler("/admin/dashboard")}

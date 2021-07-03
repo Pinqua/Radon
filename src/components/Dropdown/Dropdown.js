@@ -9,7 +9,7 @@ function Dropdown({ hideDropDown }) {
   Dropdown.handleClickOutside = hideDropDown;
   return (
     <div className="font-medium w-36 bg-white text-sm rounded shadow overflow-hidden border border-gray-100">
-      {session?.admin && (
+      {session && session?.admin && (
         <div
           className="dropDownOption border-b border-gray-200"
           onClick={() => router.push("/admin/dashboard")}
