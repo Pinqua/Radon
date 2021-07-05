@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import { signOut } from "next-auth/client";
 import { useRouter } from "next/router";

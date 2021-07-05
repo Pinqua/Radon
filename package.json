@@ -30,6 +30,7 @@
     "react-onclickoutside": "^6.11.2",
     "react-redux": "^7.2.4",
     "react-reveal": "^1.2.2",
+    "react-speech-recognition": "^3.8.2",
     "react-toastify": "^7.0.4",
     "stripe": "^8.154.0",
     "swr": "^0.5.6"

@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import Fade from "react-reveal/Fade";
 import { ShoppingBagIcon } from "@heroicons/react/outline";

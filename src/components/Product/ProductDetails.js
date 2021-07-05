@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import { addToCart } from "../../slices/cartSlice";
 import { useDispatch } from "react-redux";

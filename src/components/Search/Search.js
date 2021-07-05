@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { SearchIcon } from "@heroicons/react/outline";
 import Fade from "react-reveal/Fade";
 import Image from "next/image";

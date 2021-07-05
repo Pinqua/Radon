@@ -1,4 +1,3 @@
-import React from "react";
 import Currency from "react-currency-formatter";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -32,9 +31,8 @@ function ProductInfo({
 
   return (
     <div
-      className={`flex sm:flex-row flex-col-reverse w-full my-4 text-sm text-gray-700 py-6 ${
-        border ? "border-b border-gray-200" : ""
-      } sm:justify-between gap-6`}
+      className={`flex sm:flex-row flex-col-reverse w-full my-4 text-sm text-gray-700 py-6 ${border ? "border-b border-gray-200" : ""
+        } sm:justify-between gap-6`}
     >
       <div className="space-y-2">
         <div className="font-semibold text-base capitalize">{title}</div>

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import StorageService from "../../util/StorageService";
 import { store } from "../../app/store";
 import { hydrate } from "../../slices/cartSlice";
