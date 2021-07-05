@@ -4014,11 +4014,6 @@ react-reveal@^1.2.2:
   dependencies:
     prop-types "^15.5.10"
 
-react-speech-recognition@^3.8.2:
-  version "3.8.2"
-  resolved "https://registry.yarnpkg.com/react-speech-recognition/-/react-speech-recognition-3.8.2.tgz#c82e187db92e32e506f0593d80a2347f2079e0fd"
-  integrity sha512-ZbA8wNNdWPAiN7tHsMc/cgfRkssAQwL3F8yMDEbuxLCT0II7YrNurNb3hAq5X58+zMn7YQO+S3OZt0mp5QA38w==
-
 react-toastify@^7.0.4:
   version "7.0.4"
   resolved "https://registry.yarnpkg.com/react-toastify/-/react-toastify-7.0.4.tgz#7d0b743f2b96f65754264ca6eae31911a82378db"
