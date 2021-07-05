@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { connectToDatabase } from "../../util/mongodb";
 import getProducts from "../../util/getProducts";
 import Head from "next/head";

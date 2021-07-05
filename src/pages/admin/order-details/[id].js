@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import React from "react";
 import OrderDetails from "../../../components/Order/OrderDetails";
 import Head from "next/head";
 

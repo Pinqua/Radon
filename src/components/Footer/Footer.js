@@ -3,16 +3,16 @@ import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-function Footer(admin) {
+function Footer({ admin }) {
   const router = useRouter();
   const gmailHandler = () => {
     window.open(
       "mailto:" +
-        "piyushsati311999@gmail.com" +
-        "?subject=" +
-        " " +
-        "&body=" +
-        " ",
+      "piyushsati311999@gmail.com" +
+      "?subject=" +
+      " " +
+      "&body=" +
+      " ",
       "_self"
     );
   };

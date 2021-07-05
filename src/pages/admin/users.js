@@ -1,5 +1,4 @@
 import { useSession } from "next-auth/client";
-import React from "react";
 import Skeleton from "react-loading-skeleton";
 import useSWR from "swr";
 import Head from "next/head";
