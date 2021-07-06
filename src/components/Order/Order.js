@@ -43,7 +43,7 @@ function Order({ _id, id, amount_total, timestamp, items, status, admin }) {
         {admin ? (
           status && !loading && session && session?.admin ? (
             <select
-              className="border border-b-0 xs:text-sm text-xs p-2 rounded-t-md bg-blue-500 text-white outline-none capitalize"
+              className="shadow leading-tight focus:outline-none focus:shadow-outline border xs:text-sm text-xs p-2  bg-blue-500 text-white capitalize border-b-0 rounded-t-md"
               value={status}
               disabled={updating}
               onChange={updateStatus}
