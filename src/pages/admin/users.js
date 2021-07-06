@@ -45,7 +45,7 @@ function Users() {
                           <img
                             src={user?.image || "/img/profile_pic.svg"}
                             className="object-contain w-10 rounded-sm py-2"
-                            alt="pic"
+                            alt=""
                           />
                         </td>
                         <td className="table_col px-4">{user?.name}</td>

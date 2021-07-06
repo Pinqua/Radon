@@ -20,7 +20,7 @@ function Profile() {
               <img
                 src={session?.user?.image || "/img/profile_pic.svg"}
                 loading="lazy"
-                alt="pic"
+                alt=""
                 width="80"
                 height="80"
                 className="object-contain sm:w-24 sm:h-24 w-20 h-20 rounded-full hover:shadow-md"

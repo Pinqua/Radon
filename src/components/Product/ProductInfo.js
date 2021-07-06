@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import axios from "axios";
 import NormalToast from "../../util/Toast/NormalToast";
+import { useState } from "react";
 
 function ProductInfo({
   _id,
@@ -15,17 +16,21 @@ function ProductInfo({
   removeFromSearchResults,
 }) {
   const router = useRouter();
+  const [disabled, setDisabled] = useState(false);
 
   const deleteProduct = (_id) => {
+    setDisabled(true);
     axios
       .post("/api/admin/delete-product", { _id })
       .then(() => {
         NormalToast("Product deleted");
         removeFromSearchResults(_id);
+        setDisabled(false);
       })
       .catch((err) => {
         NormalToast("Something went wrong", true);
         console.error(err);
+        setDisabled(false);
       });
   };
 
@@ -46,14 +51,18 @@ function ProductInfo({
         </div>
         <div className="flex items-center gap-4 pt-4">
           <button
-            className="button py-2 xxs:px-10 px-8"
+            className={`button py-2 xxs:px-10 px-8 ${disabled ? "opacity-50" : ""
+              }`}
             onClick={() => router.push(`/admin/update-product/${_id}`)}
+            disabled={disabled}
           >
             Update
           </button>
           <button
-            className="button-red py-2 xxs:px-10 px-8"
+            className={`button-red py-2 xxs:px-10 px-8 ${disabled ? "opacity-50" : ""
+              }`}
             onClick={() => deleteProduct(_id)}
+            disabled={disabled}
           >
             Delete
           </button>
@@ -64,7 +73,7 @@ function ProductInfo({
           src={image}
           width={120}
           height={120}
-          alt="Item Image"
+          alt=""
           objectFit="contain"
         />
       </div>

@@ -48,7 +48,7 @@ function Header() {
                   <img
                     src={session?.user?.image || "/img/profile_pic.svg"}
                     loading="lazy"
-                    alt="pic"
+                    alt=""
                     width="24"
                     height="24"
                     className="object-contain w-10 h-10 rounded-full mr-1 hover:shadow-md"

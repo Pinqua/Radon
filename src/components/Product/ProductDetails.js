@@ -50,7 +50,7 @@ function ProductDetails({ _id, title, price, description, category, image }) {
             <div className="mx-auto">
               <Image
                 src={image}
-                alt="Product Image"
+                alt=""
                 width={400}
                 height={400}
                 objectFit="contain"

@@ -16,6 +16,7 @@ function CartProduct({
   image,
   qty,
   border,
+  disabled,
 }) {
   const dispatch = useDispatch();
   const router = useRouter();
@@ -60,7 +61,7 @@ function CartProduct({
             height={150}
             objectFit="contain"
             className="cursor-pointer"
-            alt="Product Image"
+            alt=""
             onClick={() => router.push(`/product-details/${_id}`)}
           />
         </div>
@@ -84,7 +85,11 @@ function CartProduct({
         {/* Buttons on the right of the products */}
         <div className="flex flex-col space-y-4 my-auto  justify-self-end">
           <div className="flex justify-between">
-            <button className="button sm:p-1" onClick={decQty}>
+            <button
+              className={`button sm:p-1 ${disabled ? "opacity-50" : ""}`}
+              onClick={decQty}
+              disabled={disabled}
+            >
               <MinusSmIcon className="h-5" />
             </button>
             <div className="p-2 whitespace-normal sm:p-1 sm:whitespace-nowrap">
@@ -92,13 +97,19 @@ function CartProduct({
                 {qty}
               </span>
             </div>
-            <button className="button sm:p-1" onClick={incQty}>
+            <button
+              className={`button sm:p-1 ${disabled ? "opacity-50" : ""}`}
+              onClick={incQty}
+              disabled={disabled}
+            >
               <PlusIcon className="h-5" />
             </button>
           </div>
           <button
-            className="button py-2  lg:px-10 md:px-8 px-6"
+            className={`button py-2  lg:px-10 md:px-8 px-6 ${disabled ? "opacity-50" : ""
+              }`}
             onClick={removeItemFromCart}
+            disabled={disabled}
           >
             Remove
           </button>
