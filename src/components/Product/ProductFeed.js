@@ -58,7 +58,6 @@ function ProductFeed({ products, categories }) {
               description={description}
               category={category}
               image={image}
-              products={products}
             />
           )
         )}
