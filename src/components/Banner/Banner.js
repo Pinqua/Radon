@@ -4,7 +4,10 @@ import { ShoppingBagIcon } from "@heroicons/react/outline";
 
 function Banner() {
   const scrollHandler = () => {
-    window.scrollTo(0, document.getElementById("products-feed").offsetTop - 90);
+    window.scrollTo({
+      top: document.getElementById("products-feed").offsetTop - 90,
+      behavior: "smooth",
+    });
     //window.location.href='#products-feed'
   };
 
