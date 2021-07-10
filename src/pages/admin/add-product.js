@@ -10,7 +10,7 @@ function AddProduct(props) {
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState(props?.categories[0]?.name);
   const { categories, error } = getCategories(props?.categories);
   const [disabled, setDisabled] = useState(false);
 
