@@ -3,7 +3,7 @@
 
 # Radon
 
-This a E-commerce website build using Next.js, Redux, Tailwind CSS, MongoDB
+E-commerce website which can be used by shop owner or any organization to sell there products online with all the necessary and required functionality.This website is designed using figma build using Next.js,Nextauth, Redux, Tailwind CSS, MongoDB.
 
 ![Logo](https://radon.vercel.app/_next/image?url=%2Fimg%2FRadon.svg&w=128&q=75)
 
