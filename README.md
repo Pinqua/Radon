@@ -15,7 +15,7 @@ https://radon.vercel.app
 
 ## Screenshots
 
-![App Screenshot](https://i.ibb.co/cg0mc67/radon.png)
+![App Screenshot](https://i.ibb.co/C7nCj5K/radon.gif)
 
   
 ## Features
