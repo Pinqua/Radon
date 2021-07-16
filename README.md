@@ -24,7 +24,7 @@ https://radon.vercel.app
 - Real Time and Dynamic
 - Progressive Web Apps (PWA)
 - Payment Integration
-- Admin Panel
+- Admin Panel with functionalities like add product, delete product, update product, add category, view users registered, update order status and cancel order
 - State Management using Redux
 - Google Authentication
 - Track order status realtime
