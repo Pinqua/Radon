@@ -3,7 +3,7 @@
 
 # Radon
 
-E-commerce website with all the necessary and required functionality.This website is designed using figma and build using Next.js,Nextauth, Redux, Tailwind CSS, MongoDB.
+A Full-fledged real Time and responsive e-commerce website designed using figma and build using Next.js, Nextauth, Redux, Tailwind CSS, MongoDB.
 
 ![Logo](https://radon.vercel.app/_next/image?url=%2Fimg%2FRadon.svg&w=128&q=75)
 
