@@ -3,7 +3,7 @@
 
 # Radon
 
-A Full-fledged e-commerce website designed using figma and built using Next.js, Nextauth, Redux, Tailwind CSS, MongoDB.
+A Full-fledged e-commerce website designed using figma and built using Next.js, Nextauth, Redux, Tailwind CSS, MongoDB
 
 ![Logo](https://radon.vercel.app/_next/image?url=%2Fimg%2FRadon.svg&w=128&q=75)
 
@@ -23,7 +23,7 @@ https://radon.vercel.app
 - Responsive
 - Real Time and Dynamic
 - Progressive Web Apps (PWA)
-- Payment Integration
+- Payment Gateway integration
 - Admin Panel with functionalities like add product, delete product, update product, add category, view users registered, update order status and cancel order
 - State Management using Redux
 - Google Authentication
