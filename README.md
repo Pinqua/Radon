@@ -28,7 +28,7 @@ https://radon.vercel.app
 - State Management using Redux
 - Google Authentication
 - Track order status realtime
-- Cancel Order
+- Cancel order
 
 
 ## Run Locally
