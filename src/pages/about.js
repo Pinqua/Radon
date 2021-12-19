@@ -43,7 +43,7 @@ function About() {
                     </span>
                     by
                     <span className="font-semibold text-blue-light underline mx-1">
-                      <Link href="https://itspiyushsati.netlify.app">
+                      <Link href="https://itspiyushsati.vercel.app">
                         Piyush Sati
                       </Link>
                     </span>
