@@ -21,7 +21,7 @@ A full-stack e-commerce website designed using Figma and built using Next.js, Ne
 
 ![Logo](https://radon.vercel.app/_next/image?url=%2Fimg%2FRadon.svg&w=128&q=75)
 
-![Icon](https://radon.vercel.app/img/favicons/apple-touch-icon.png)
+<img src="https://radon.vercel.app/img/favicons/apple-touch-icon.png" height="100" alt="" />
 
 
 ## Demo
