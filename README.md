@@ -86,4 +86,8 @@ Data inserted in the database was pulled form fakeStoreAPI to kickstart the proj
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
+<br/>
+<br/>
+
+<p align="center">If you like a repository, show your ❤️ by starring and forking it.</p>
   
