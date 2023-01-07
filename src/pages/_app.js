@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }) {
     <NextAuthProvider session={pageProps.session}>
       <SWRConfig
         value={{
-          refreshInterval: 1000,
+          refreshInterval: 10000,
           fetcher,
         }}
       >
