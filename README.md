@@ -119,6 +119,8 @@ Admin Access
  To gain admin access, you need to add your email ID to the admin collection in MongoDB. 
  After adding it, try logging in with the same email ID, and you should see the dashboard option.  
 ```
+![182356880-d13b94f1-2a21-4e4e-8d1a-bb4faca0e61d (1)](https://user-images.githubusercontent.com/69719134/235835896-fe1cad91-b734-4ac9-8a14-0d2cd136f9a8.png)
+
 
 
 ## Stripe Payment Gateway
